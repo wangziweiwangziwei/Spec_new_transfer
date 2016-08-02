@@ -1,0 +1,16 @@
+127.0.0.1 - - [23/Apr/2016:11:28:30 +0800] "GET /MapTest/map.jsp HTTP/1.1" 200 37695
+127.0.0.1 - - [23/Apr/2016:11:28:30 +0800] "GET /MapTest/imgs/colorbar.png HTTP/1.1" 200 1825
+127.0.0.1 - - [23/Apr/2016:11:55:39 +0800] "GET /MapTest/map.jsp HTTP/1.1" 200 37695
+127.0.0.1 - - [23/Apr/2016:11:55:39 +0800] "GET /MapTest/imgs/colorbar.png HTTP/1.1" 200 1825
+127.0.0.1 - - [23/Apr/2016:14:54:41 +0800] "GET /MapTest/map.jsp HTTP/1.1" 200 37695
+127.0.0.1 - - [23/Apr/2016:14:54:41 +0800] "GET /MapTest/imgs/colorbar.png HTTP/1.1" 200 1825
+127.0.0.1 - - [23/Apr/2016:15:00:41 +0800] "GET /MapTest/map.jsp HTTP/1.1" 200 37695
+127.0.0.1 - - [23/Apr/2016:15:00:41 +0800] "GET /MapTest/imgs/colorbar.png HTTP/1.1" 200 1825
+127.0.0.1 - - [23/Apr/2016:15:17:00 +0800] "GET /MapTest/map.jsp HTTP/1.1" 200 37695
+127.0.0.1 - - [23/Apr/2016:15:17:00 +0800] "GET /MapTest/imgs/colorbar.png HTTP/1.1" 200 1825
+127.0.0.1 - - [23/Apr/2016:15:18:38 +0800] "GET /MapTest/map.jsp HTTP/1.1" 200 37695
+127.0.0.1 - - [23/Apr/2016:15:18:38 +0800] "GET /MapTest/imgs/colorbar.png HTTP/1.1" 200 1825
+127.0.0.1 - - [23/Apr/2016:15:20:21 +0800] "GET /MapTest/map.jsp HTTP/1.1" 200 37695
+127.0.0.1 - - [23/Apr/2016:15:20:21 +0800] "GET /MapTest/imgs/colorbar.png HTTP/1.1" 200 1825
+127.0.0.1 - - [23/Apr/2016:15:45:26 +0800] "GET /MapTest/map.jsp HTTP/1.1" 200 37695
+127.0.0.1 - - [23/Apr/2016:15:45:26 +0800] "GET /MapTest/imgs/colorbar.png HTTP/1.1" 200 1825

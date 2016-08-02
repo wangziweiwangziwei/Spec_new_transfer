@@ -1,0 +1,3 @@
+127.0.0.1 - - [11/Jul/2016:23:03:02 +0800] "GET /MapTest/map.jsp HTTP/1.1" 200 43588
+127.0.0.1 - - [11/Jul/2016:23:03:02 +0800] "GET /MapTest/imgs/colorbar.png HTTP/1.1" 200 1825
+127.0.0.1 - - [11/Jul/2016:23:06:46 +0800] "GET /MapTest/map.jsp HTTP/1.1" 200 43588

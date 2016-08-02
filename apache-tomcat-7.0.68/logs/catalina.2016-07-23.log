@@ -1,0 +1,1636 @@
+七月 23, 2016 10:06:26 上午 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:MapTest' did not find a matching property.
+七月 23, 2016 10:06:26 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server version:        Apache Tomcat/7.0.68
+七月 23, 2016 10:06:26 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server built:          Feb 8 2016 20:25:54 UTC
+七月 23, 2016 10:06:26 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server number:         7.0.68.0
+七月 23, 2016 10:06:26 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Name:               Windows 7
+七月 23, 2016 10:06:26 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Version:            6.1
+七月 23, 2016 10:06:26 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Architecture:          x86
+七月 23, 2016 10:06:26 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Java Home:             G:\eclipse workspace\FrameTest\jre
+七月 23, 2016 10:06:26 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Version:           1.8.0_20-b26
+七月 23, 2016 10:06:26 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Vendor:            Oracle Corporation
+七月 23, 2016 10:06:26 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_BASE:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:06:26 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_HOME:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:06:26 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.config.file=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\conf\logging.properties
+七月 23, 2016 10:06:26 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+七月 23, 2016 10:06:26 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.endorsed.dirs=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\endorsed
+七月 23, 2016 10:06:26 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.base=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:06:26 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.home=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:06:26 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.io.tmpdir=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\temp
+七月 23, 2016 10:06:26 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: Loaded APR based Apache Tomcat Native library 1.1.33 using APR version 1.5.1.
+七月 23, 2016 10:06:26 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+七月 23, 2016 10:06:27 上午 org.apache.catalina.core.AprLifecycleListener initializeSSL
+信息: OpenSSL successfully initialized (OpenSSL 1.0.1m 19 Mar 2015)
+七月 23, 2016 10:06:28 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:06:28 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:06:28 上午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 3235 ms
+七月 23, 2016 10:06:28 上午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+七月 23, 2016 10:06:28 上午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.68
+七月 23, 2016 10:06:28 上午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+七月 23, 2016 10:06:29 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs
+七月 23, 2016 10:06:29 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs has finished in 66 ms
+七月 23, 2016 10:06:29 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples
+七月 23, 2016 10:06:29 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples has finished in 414 ms
+七月 23, 2016 10:06:29 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager
+七月 23, 2016 10:06:29 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager has finished in 54 ms
+七月 23, 2016 10:06:29 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager
+七月 23, 2016 10:06:29 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager has finished in 46 ms
+七月 23, 2016 10:06:29 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT
+七月 23, 2016 10:06:29 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT has finished in 37 ms
+七月 23, 2016 10:06:29 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:06:29 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:06:29 上午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 1514 ms
+七月 23, 2016 10:07:24 上午 org.apache.catalina.core.StandardServer await
+信息: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+七月 23, 2016 10:07:24 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:07:24 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:07:25 上午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+七月 23, 2016 10:07:25 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:07:25 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:07:25 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:07:25 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:07:33 上午 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:MapTest' did not find a matching property.
+七月 23, 2016 10:07:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server version:        Apache Tomcat/7.0.68
+七月 23, 2016 10:07:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server built:          Feb 8 2016 20:25:54 UTC
+七月 23, 2016 10:07:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server number:         7.0.68.0
+七月 23, 2016 10:07:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Name:               Windows 7
+七月 23, 2016 10:07:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Version:            6.1
+七月 23, 2016 10:07:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Architecture:          x86
+七月 23, 2016 10:07:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Java Home:             G:\eclipse workspace\FrameTest\jre
+七月 23, 2016 10:07:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Version:           1.8.0_20-b26
+七月 23, 2016 10:07:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Vendor:            Oracle Corporation
+七月 23, 2016 10:07:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_BASE:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:07:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_HOME:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:07:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.config.file=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\conf\logging.properties
+七月 23, 2016 10:07:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+七月 23, 2016 10:07:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.endorsed.dirs=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\endorsed
+七月 23, 2016 10:07:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.base=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:07:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.home=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:07:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.io.tmpdir=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\temp
+七月 23, 2016 10:07:34 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: Loaded APR based Apache Tomcat Native library 1.1.33 using APR version 1.5.1.
+七月 23, 2016 10:07:34 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+七月 23, 2016 10:07:34 上午 org.apache.catalina.core.AprLifecycleListener initializeSSL
+信息: OpenSSL successfully initialized (OpenSSL 1.0.1m 19 Mar 2015)
+七月 23, 2016 10:07:35 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:07:35 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:07:35 上午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1470 ms
+七月 23, 2016 10:07:35 上午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+七月 23, 2016 10:07:35 上午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.68
+七月 23, 2016 10:07:35 上午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+七月 23, 2016 10:07:35 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs
+七月 23, 2016 10:07:35 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs has finished in 44 ms
+七月 23, 2016 10:07:35 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples
+七月 23, 2016 10:07:35 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples has finished in 274 ms
+七月 23, 2016 10:07:35 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager
+七月 23, 2016 10:07:35 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager has finished in 47 ms
+七月 23, 2016 10:07:35 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager
+七月 23, 2016 10:07:35 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager has finished in 42 ms
+七月 23, 2016 10:07:35 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT
+七月 23, 2016 10:07:35 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT has finished in 40 ms
+七月 23, 2016 10:07:35 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:07:35 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:07:35 上午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 874 ms
+七月 23, 2016 10:09:04 上午 org.apache.catalina.core.StandardServer await
+信息: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+七月 23, 2016 10:09:04 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:09:04 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:09:04 上午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+七月 23, 2016 10:09:04 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:09:04 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:09:04 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:09:04 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:12:05 上午 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:MapTest' did not find a matching property.
+七月 23, 2016 10:12:05 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server version:        Apache Tomcat/7.0.68
+七月 23, 2016 10:12:05 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server built:          Feb 8 2016 20:25:54 UTC
+七月 23, 2016 10:12:05 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server number:         7.0.68.0
+七月 23, 2016 10:12:05 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Name:               Windows 7
+七月 23, 2016 10:12:05 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Version:            6.1
+七月 23, 2016 10:12:05 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Architecture:          x86
+七月 23, 2016 10:12:05 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Java Home:             G:\eclipse workspace\FrameTest\jre
+七月 23, 2016 10:12:05 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Version:           1.8.0_20-b26
+七月 23, 2016 10:12:05 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Vendor:            Oracle Corporation
+七月 23, 2016 10:12:05 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_BASE:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:12:05 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_HOME:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:12:05 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.config.file=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\conf\logging.properties
+七月 23, 2016 10:12:05 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+七月 23, 2016 10:12:05 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.endorsed.dirs=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\endorsed
+七月 23, 2016 10:12:05 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.base=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:12:05 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.home=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:12:05 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.io.tmpdir=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\temp
+七月 23, 2016 10:12:05 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: Loaded APR based Apache Tomcat Native library 1.1.33 using APR version 1.5.1.
+七月 23, 2016 10:12:05 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+七月 23, 2016 10:12:06 上午 org.apache.catalina.core.AprLifecycleListener initializeSSL
+信息: OpenSSL successfully initialized (OpenSSL 1.0.1m 19 Mar 2015)
+七月 23, 2016 10:12:06 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:12:06 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:12:06 上午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1315 ms
+七月 23, 2016 10:12:06 上午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+七月 23, 2016 10:12:06 上午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.68
+七月 23, 2016 10:12:06 上午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+七月 23, 2016 10:12:07 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs
+七月 23, 2016 10:12:07 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs has finished in 43 ms
+七月 23, 2016 10:12:07 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples
+七月 23, 2016 10:12:07 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples has finished in 257 ms
+七月 23, 2016 10:12:07 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager
+七月 23, 2016 10:12:07 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager has finished in 48 ms
+七月 23, 2016 10:12:07 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager
+七月 23, 2016 10:12:07 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager has finished in 43 ms
+七月 23, 2016 10:12:07 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT
+七月 23, 2016 10:12:07 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT has finished in 38 ms
+七月 23, 2016 10:12:07 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:12:07 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:12:07 上午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 855 ms
+七月 23, 2016 10:16:29 上午 org.apache.catalina.core.StandardServer await
+信息: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+七月 23, 2016 10:16:29 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:16:29 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:16:29 上午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+七月 23, 2016 10:16:29 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:16:29 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:16:29 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:16:29 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:16:34 上午 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:MapTest' did not find a matching property.
+七月 23, 2016 10:16:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server version:        Apache Tomcat/7.0.68
+七月 23, 2016 10:16:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server built:          Feb 8 2016 20:25:54 UTC
+七月 23, 2016 10:16:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server number:         7.0.68.0
+七月 23, 2016 10:16:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Name:               Windows 7
+七月 23, 2016 10:16:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Version:            6.1
+七月 23, 2016 10:16:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Architecture:          x86
+七月 23, 2016 10:16:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Java Home:             G:\eclipse workspace\FrameTest\jre
+七月 23, 2016 10:16:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Version:           1.8.0_20-b26
+七月 23, 2016 10:16:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Vendor:            Oracle Corporation
+七月 23, 2016 10:16:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_BASE:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:16:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_HOME:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:16:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.config.file=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\conf\logging.properties
+七月 23, 2016 10:16:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+七月 23, 2016 10:16:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.endorsed.dirs=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\endorsed
+七月 23, 2016 10:16:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.base=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:16:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.home=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:16:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.io.tmpdir=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\temp
+七月 23, 2016 10:16:34 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: Loaded APR based Apache Tomcat Native library 1.1.33 using APR version 1.5.1.
+七月 23, 2016 10:16:34 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+七月 23, 2016 10:16:34 上午 org.apache.catalina.core.AprLifecycleListener initializeSSL
+信息: OpenSSL successfully initialized (OpenSSL 1.0.1m 19 Mar 2015)
+七月 23, 2016 10:16:34 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:16:34 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:16:34 上午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1233 ms
+七月 23, 2016 10:16:35 上午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+七月 23, 2016 10:16:35 上午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.68
+七月 23, 2016 10:16:35 上午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+七月 23, 2016 10:16:35 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs
+七月 23, 2016 10:16:35 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs has finished in 43 ms
+七月 23, 2016 10:16:35 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples
+七月 23, 2016 10:16:35 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples has finished in 246 ms
+七月 23, 2016 10:16:35 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager
+七月 23, 2016 10:16:35 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager has finished in 46 ms
+七月 23, 2016 10:16:35 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager
+七月 23, 2016 10:16:35 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager has finished in 43 ms
+七月 23, 2016 10:16:35 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT
+七月 23, 2016 10:16:35 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT has finished in 39 ms
+七月 23, 2016 10:16:35 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:16:35 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:16:35 上午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 844 ms
+七月 23, 2016 10:20:16 上午 org.apache.catalina.core.StandardServer await
+信息: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+七月 23, 2016 10:20:16 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:20:16 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:20:17 上午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+七月 23, 2016 10:20:17 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:20:17 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:20:17 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:20:17 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:20:34 上午 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:MapTest' did not find a matching property.
+七月 23, 2016 10:20:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server version:        Apache Tomcat/7.0.68
+七月 23, 2016 10:20:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server built:          Feb 8 2016 20:25:54 UTC
+七月 23, 2016 10:20:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server number:         7.0.68.0
+七月 23, 2016 10:20:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Name:               Windows 7
+七月 23, 2016 10:20:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Version:            6.1
+七月 23, 2016 10:20:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Architecture:          x86
+七月 23, 2016 10:20:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Java Home:             G:\eclipse workspace\FrameTest\jre
+七月 23, 2016 10:20:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Version:           1.8.0_20-b26
+七月 23, 2016 10:20:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Vendor:            Oracle Corporation
+七月 23, 2016 10:20:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_BASE:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:20:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_HOME:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:20:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.config.file=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\conf\logging.properties
+七月 23, 2016 10:20:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+七月 23, 2016 10:20:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.endorsed.dirs=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\endorsed
+七月 23, 2016 10:20:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.base=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:20:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.home=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:20:34 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.io.tmpdir=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\temp
+七月 23, 2016 10:20:34 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: Loaded APR based Apache Tomcat Native library 1.1.33 using APR version 1.5.1.
+七月 23, 2016 10:20:34 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+七月 23, 2016 10:20:35 上午 org.apache.catalina.core.AprLifecycleListener initializeSSL
+信息: OpenSSL successfully initialized (OpenSSL 1.0.1m 19 Mar 2015)
+七月 23, 2016 10:20:35 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:20:35 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:20:35 上午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1274 ms
+七月 23, 2016 10:20:35 上午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+七月 23, 2016 10:20:35 上午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.68
+七月 23, 2016 10:20:36 上午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+七月 23, 2016 10:20:36 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs
+七月 23, 2016 10:20:36 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs has finished in 45 ms
+七月 23, 2016 10:20:36 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples
+七月 23, 2016 10:20:36 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples has finished in 269 ms
+七月 23, 2016 10:20:36 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager
+七月 23, 2016 10:20:36 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager has finished in 50 ms
+七月 23, 2016 10:20:36 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager
+七月 23, 2016 10:20:36 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager has finished in 49 ms
+七月 23, 2016 10:20:36 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT
+七月 23, 2016 10:20:36 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT has finished in 37 ms
+七月 23, 2016 10:20:36 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:20:36 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:20:36 上午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 887 ms
+七月 23, 2016 10:21:04 上午 org.apache.catalina.core.StandardServer await
+信息: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+七月 23, 2016 10:21:04 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:21:04 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:21:04 上午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+七月 23, 2016 10:21:04 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:21:04 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:21:04 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:21:04 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:28:28 上午 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:MapTest' did not find a matching property.
+七月 23, 2016 10:28:28 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server version:        Apache Tomcat/7.0.68
+七月 23, 2016 10:28:28 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server built:          Feb 8 2016 20:25:54 UTC
+七月 23, 2016 10:28:28 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server number:         7.0.68.0
+七月 23, 2016 10:28:28 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Name:               Windows 7
+七月 23, 2016 10:28:28 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Version:            6.1
+七月 23, 2016 10:28:28 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Architecture:          x86
+七月 23, 2016 10:28:28 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Java Home:             G:\eclipse workspace\FrameTest\jre
+七月 23, 2016 10:28:28 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Version:           1.8.0_20-b26
+七月 23, 2016 10:28:28 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Vendor:            Oracle Corporation
+七月 23, 2016 10:28:28 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_BASE:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:28:28 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_HOME:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:28:28 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.config.file=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\conf\logging.properties
+七月 23, 2016 10:28:28 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+七月 23, 2016 10:28:28 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.endorsed.dirs=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\endorsed
+七月 23, 2016 10:28:28 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.base=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:28:28 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.home=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:28:28 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.io.tmpdir=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\temp
+七月 23, 2016 10:28:28 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: Loaded APR based Apache Tomcat Native library 1.1.33 using APR version 1.5.1.
+七月 23, 2016 10:28:28 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+七月 23, 2016 10:28:28 上午 org.apache.catalina.core.AprLifecycleListener initializeSSL
+信息: OpenSSL successfully initialized (OpenSSL 1.0.1m 19 Mar 2015)
+七月 23, 2016 10:28:29 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:28:29 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:28:29 上午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1236 ms
+七月 23, 2016 10:28:29 上午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+七月 23, 2016 10:28:29 上午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.68
+七月 23, 2016 10:28:29 上午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+七月 23, 2016 10:28:29 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs
+七月 23, 2016 10:28:29 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs has finished in 43 ms
+七月 23, 2016 10:28:29 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples
+七月 23, 2016 10:28:29 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples has finished in 262 ms
+七月 23, 2016 10:28:29 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager
+七月 23, 2016 10:28:29 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager has finished in 47 ms
+七月 23, 2016 10:28:29 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager
+七月 23, 2016 10:28:29 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager has finished in 46 ms
+七月 23, 2016 10:28:29 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT
+七月 23, 2016 10:28:29 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT has finished in 37 ms
+七月 23, 2016 10:28:29 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:28:29 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:28:29 上午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 864 ms
+七月 23, 2016 10:35:55 上午 org.apache.catalina.core.StandardServer await
+信息: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+七月 23, 2016 10:35:55 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:35:55 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:35:55 上午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+七月 23, 2016 10:35:55 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:35:55 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:35:55 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:35:55 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:36:01 上午 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:MapTest' did not find a matching property.
+七月 23, 2016 10:36:01 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server version:        Apache Tomcat/7.0.68
+七月 23, 2016 10:36:01 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server built:          Feb 8 2016 20:25:54 UTC
+七月 23, 2016 10:36:01 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server number:         7.0.68.0
+七月 23, 2016 10:36:01 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Name:               Windows 7
+七月 23, 2016 10:36:01 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Version:            6.1
+七月 23, 2016 10:36:01 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Architecture:          x86
+七月 23, 2016 10:36:01 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Java Home:             G:\eclipse workspace\FrameTest\jre
+七月 23, 2016 10:36:01 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Version:           1.8.0_20-b26
+七月 23, 2016 10:36:01 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Vendor:            Oracle Corporation
+七月 23, 2016 10:36:01 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_BASE:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:36:01 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_HOME:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:36:01 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.config.file=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\conf\logging.properties
+七月 23, 2016 10:36:01 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+七月 23, 2016 10:36:01 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.endorsed.dirs=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\endorsed
+七月 23, 2016 10:36:01 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.base=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:36:01 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.home=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:36:01 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.io.tmpdir=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\temp
+七月 23, 2016 10:36:01 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: Loaded APR based Apache Tomcat Native library 1.1.33 using APR version 1.5.1.
+七月 23, 2016 10:36:01 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+七月 23, 2016 10:36:02 上午 org.apache.catalina.core.AprLifecycleListener initializeSSL
+信息: OpenSSL successfully initialized (OpenSSL 1.0.1m 19 Mar 2015)
+七月 23, 2016 10:36:02 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:36:02 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:36:02 上午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1194 ms
+七月 23, 2016 10:36:02 上午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+七月 23, 2016 10:36:02 上午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.68
+七月 23, 2016 10:36:02 上午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+七月 23, 2016 10:36:02 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs
+七月 23, 2016 10:36:02 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs has finished in 42 ms
+七月 23, 2016 10:36:02 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples
+七月 23, 2016 10:36:03 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples has finished in 246 ms
+七月 23, 2016 10:36:03 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager
+七月 23, 2016 10:36:03 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager has finished in 61 ms
+七月 23, 2016 10:36:03 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager
+七月 23, 2016 10:36:03 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager has finished in 46 ms
+七月 23, 2016 10:36:03 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT
+七月 23, 2016 10:36:03 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT has finished in 38 ms
+七月 23, 2016 10:36:03 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:36:03 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:36:03 上午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 881 ms
+七月 23, 2016 10:44:43 上午 org.apache.catalina.core.StandardServer await
+信息: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+七月 23, 2016 10:44:43 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:44:43 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:44:43 上午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+七月 23, 2016 10:44:43 上午 org.apache.catalina.loader.WebappClassLoaderBase clearReferencesJdbc
+严重: The web application [/MapTest] registered the JDBC driver [org.sqlite.JDBC] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+七月 23, 2016 10:44:43 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:44:43 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:44:43 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:44:43 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:44:47 上午 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:MapTest' did not find a matching property.
+七月 23, 2016 10:44:47 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server version:        Apache Tomcat/7.0.68
+七月 23, 2016 10:44:47 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server built:          Feb 8 2016 20:25:54 UTC
+七月 23, 2016 10:44:47 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server number:         7.0.68.0
+七月 23, 2016 10:44:47 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Name:               Windows 7
+七月 23, 2016 10:44:47 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Version:            6.1
+七月 23, 2016 10:44:47 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Architecture:          x86
+七月 23, 2016 10:44:47 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Java Home:             G:\eclipse workspace\FrameTest\jre
+七月 23, 2016 10:44:47 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Version:           1.8.0_20-b26
+七月 23, 2016 10:44:47 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Vendor:            Oracle Corporation
+七月 23, 2016 10:44:47 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_BASE:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:44:47 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_HOME:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:44:47 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.config.file=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\conf\logging.properties
+七月 23, 2016 10:44:47 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+七月 23, 2016 10:44:47 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.endorsed.dirs=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\endorsed
+七月 23, 2016 10:44:47 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.base=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:44:47 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.home=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:44:47 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.io.tmpdir=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\temp
+七月 23, 2016 10:44:47 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: Loaded APR based Apache Tomcat Native library 1.1.33 using APR version 1.5.1.
+七月 23, 2016 10:44:47 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+七月 23, 2016 10:44:48 上午 org.apache.catalina.core.AprLifecycleListener initializeSSL
+信息: OpenSSL successfully initialized (OpenSSL 1.0.1m 19 Mar 2015)
+七月 23, 2016 10:44:48 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:44:48 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:44:48 上午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1405 ms
+七月 23, 2016 10:44:48 上午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+七月 23, 2016 10:44:48 上午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.68
+七月 23, 2016 10:44:48 上午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+七月 23, 2016 10:44:48 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs
+七月 23, 2016 10:44:48 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs has finished in 42 ms
+七月 23, 2016 10:44:48 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples
+七月 23, 2016 10:44:49 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples has finished in 233 ms
+七月 23, 2016 10:44:49 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager
+七月 23, 2016 10:44:49 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager has finished in 46 ms
+七月 23, 2016 10:44:49 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager
+七月 23, 2016 10:44:49 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager has finished in 41 ms
+七月 23, 2016 10:44:49 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT
+七月 23, 2016 10:44:49 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT has finished in 37 ms
+七月 23, 2016 10:44:49 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:44:49 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:44:49 上午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 820 ms
+七月 23, 2016 10:47:05 上午 org.apache.catalina.core.StandardServer await
+信息: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+七月 23, 2016 10:47:05 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:47:05 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:47:05 上午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+七月 23, 2016 10:47:05 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:47:05 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:47:05 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:47:05 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:47:15 上午 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:MapTest' did not find a matching property.
+七月 23, 2016 10:47:15 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server version:        Apache Tomcat/7.0.68
+七月 23, 2016 10:47:15 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server built:          Feb 8 2016 20:25:54 UTC
+七月 23, 2016 10:47:15 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server number:         7.0.68.0
+七月 23, 2016 10:47:15 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Name:               Windows 7
+七月 23, 2016 10:47:15 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Version:            6.1
+七月 23, 2016 10:47:15 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Architecture:          x86
+七月 23, 2016 10:47:15 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Java Home:             G:\eclipse workspace\FrameTest\jre
+七月 23, 2016 10:47:15 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Version:           1.8.0_20-b26
+七月 23, 2016 10:47:15 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Vendor:            Oracle Corporation
+七月 23, 2016 10:47:15 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_BASE:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:47:15 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_HOME:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:47:15 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.config.file=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\conf\logging.properties
+七月 23, 2016 10:47:15 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+七月 23, 2016 10:47:15 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.endorsed.dirs=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\endorsed
+七月 23, 2016 10:47:15 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.base=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:47:15 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.home=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 10:47:15 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.io.tmpdir=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\temp
+七月 23, 2016 10:47:15 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: Loaded APR based Apache Tomcat Native library 1.1.33 using APR version 1.5.1.
+七月 23, 2016 10:47:15 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+七月 23, 2016 10:47:16 上午 org.apache.catalina.core.AprLifecycleListener initializeSSL
+信息: OpenSSL successfully initialized (OpenSSL 1.0.1m 19 Mar 2015)
+七月 23, 2016 10:47:16 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:47:16 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:47:16 上午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1331 ms
+七月 23, 2016 10:47:16 上午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+七月 23, 2016 10:47:16 上午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.68
+七月 23, 2016 10:47:17 上午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+七月 23, 2016 10:47:17 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs
+七月 23, 2016 10:47:17 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs has finished in 42 ms
+七月 23, 2016 10:47:17 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples
+七月 23, 2016 10:47:17 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples has finished in 238 ms
+七月 23, 2016 10:47:17 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager
+七月 23, 2016 10:47:17 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager has finished in 45 ms
+七月 23, 2016 10:47:17 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager
+七月 23, 2016 10:47:17 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager has finished in 41 ms
+七月 23, 2016 10:47:17 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT
+七月 23, 2016 10:47:17 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT has finished in 38 ms
+七月 23, 2016 10:47:17 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:47:17 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:47:17 上午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 840 ms
+七月 23, 2016 10:51:42 上午 org.apache.catalina.core.StandardServer await
+信息: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+七月 23, 2016 10:51:42 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:51:42 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:51:42 上午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+七月 23, 2016 10:51:42 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:51:42 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 10:51:42 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 10:51:42 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:07:09 下午 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:MapTest' did not find a matching property.
+七月 23, 2016 5:07:10 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server version:        Apache Tomcat/7.0.68
+七月 23, 2016 5:07:10 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server built:          Feb 8 2016 20:25:54 UTC
+七月 23, 2016 5:07:10 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server number:         7.0.68.0
+七月 23, 2016 5:07:10 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Name:               Windows 7
+七月 23, 2016 5:07:10 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Version:            6.1
+七月 23, 2016 5:07:10 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Architecture:          x86
+七月 23, 2016 5:07:10 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Java Home:             G:\eclipse workspace\FrameTest\jre
+七月 23, 2016 5:07:10 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Version:           1.8.0_20-b26
+七月 23, 2016 5:07:10 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Vendor:            Oracle Corporation
+七月 23, 2016 5:07:10 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_BASE:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:07:10 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_HOME:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:07:10 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.config.file=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\conf\logging.properties
+七月 23, 2016 5:07:10 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+七月 23, 2016 5:07:10 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.endorsed.dirs=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\endorsed
+七月 23, 2016 5:07:10 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.base=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:07:10 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.home=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:07:10 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.io.tmpdir=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\temp
+七月 23, 2016 5:07:10 下午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: Loaded APR based Apache Tomcat Native library 1.1.33 using APR version 1.5.1.
+七月 23, 2016 5:07:10 下午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+七月 23, 2016 5:07:11 下午 org.apache.catalina.core.AprLifecycleListener initializeSSL
+信息: OpenSSL successfully initialized (OpenSSL 1.0.1m 19 Mar 2015)
+七月 23, 2016 5:07:21 下午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:07:21 下午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:07:21 下午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 35419 ms
+七月 23, 2016 5:07:22 下午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+七月 23, 2016 5:07:22 下午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.68
+七月 23, 2016 5:07:23 下午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+七月 23, 2016 5:07:23 下午 org.apache.catalina.util.SessionIdGeneratorBase createSecureRandom
+信息: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [134] milliseconds.
+七月 23, 2016 5:07:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs
+七月 23, 2016 5:07:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs has finished in 69 ms
+七月 23, 2016 5:07:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples
+七月 23, 2016 5:07:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples has finished in 448 ms
+七月 23, 2016 5:07:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager
+七月 23, 2016 5:07:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager has finished in 55 ms
+七月 23, 2016 5:07:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager
+七月 23, 2016 5:07:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager has finished in 44 ms
+七月 23, 2016 5:07:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT
+七月 23, 2016 5:07:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT has finished in 37 ms
+七月 23, 2016 5:07:24 下午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:07:24 下午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:07:24 下午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 2261 ms
+七月 23, 2016 5:07:56 下午 org.apache.catalina.core.StandardServer await
+信息: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+七月 23, 2016 5:07:56 下午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:07:56 下午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:07:56 下午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+七月 23, 2016 5:07:57 下午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:07:57 下午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:07:57 下午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:07:57 下午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:08:07 下午 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:MapTest' did not find a matching property.
+七月 23, 2016 5:08:07 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server version:        Apache Tomcat/7.0.68
+七月 23, 2016 5:08:07 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server built:          Feb 8 2016 20:25:54 UTC
+七月 23, 2016 5:08:07 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server number:         7.0.68.0
+七月 23, 2016 5:08:07 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Name:               Windows 7
+七月 23, 2016 5:08:07 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Version:            6.1
+七月 23, 2016 5:08:07 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Architecture:          x86
+七月 23, 2016 5:08:07 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Java Home:             G:\eclipse workspace\FrameTest\jre
+七月 23, 2016 5:08:07 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Version:           1.8.0_20-b26
+七月 23, 2016 5:08:07 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Vendor:            Oracle Corporation
+七月 23, 2016 5:08:07 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_BASE:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:08:07 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_HOME:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:08:07 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.config.file=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\conf\logging.properties
+七月 23, 2016 5:08:07 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+七月 23, 2016 5:08:07 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.endorsed.dirs=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\endorsed
+七月 23, 2016 5:08:07 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.base=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:08:07 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.home=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:08:07 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.io.tmpdir=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\temp
+七月 23, 2016 5:08:07 下午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: Loaded APR based Apache Tomcat Native library 1.1.33 using APR version 1.5.1.
+七月 23, 2016 5:08:07 下午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+七月 23, 2016 5:08:08 下午 org.apache.catalina.core.AprLifecycleListener initializeSSL
+信息: OpenSSL successfully initialized (OpenSSL 1.0.1m 19 Mar 2015)
+七月 23, 2016 5:08:08 下午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:08:08 下午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:08:08 下午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1495 ms
+七月 23, 2016 5:08:08 下午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+七月 23, 2016 5:08:08 下午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.68
+七月 23, 2016 5:08:08 下午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+七月 23, 2016 5:08:08 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs
+七月 23, 2016 5:08:08 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs has finished in 46 ms
+七月 23, 2016 5:08:08 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples
+七月 23, 2016 5:08:08 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples has finished in 253 ms
+七月 23, 2016 5:08:08 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager
+七月 23, 2016 5:08:09 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager has finished in 49 ms
+七月 23, 2016 5:08:09 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager
+七月 23, 2016 5:08:09 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager has finished in 45 ms
+七月 23, 2016 5:08:09 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT
+七月 23, 2016 5:08:09 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT has finished in 39 ms
+七月 23, 2016 5:08:09 下午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:08:09 下午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:08:09 下午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 931 ms
+七月 23, 2016 5:09:07 下午 org.apache.catalina.core.StandardServer await
+信息: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+七月 23, 2016 5:09:07 下午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:09:07 下午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:09:07 下午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+七月 23, 2016 5:09:07 下午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:09:07 下午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:09:07 下午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:09:07 下午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:09:22 下午 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:MapTest' did not find a matching property.
+七月 23, 2016 5:09:22 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server version:        Apache Tomcat/7.0.68
+七月 23, 2016 5:09:22 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server built:          Feb 8 2016 20:25:54 UTC
+七月 23, 2016 5:09:22 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server number:         7.0.68.0
+七月 23, 2016 5:09:22 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Name:               Windows 7
+七月 23, 2016 5:09:22 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Version:            6.1
+七月 23, 2016 5:09:22 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Architecture:          x86
+七月 23, 2016 5:09:22 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Java Home:             G:\eclipse workspace\FrameTest\jre
+七月 23, 2016 5:09:22 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Version:           1.8.0_20-b26
+七月 23, 2016 5:09:22 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Vendor:            Oracle Corporation
+七月 23, 2016 5:09:22 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_BASE:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:09:22 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_HOME:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:09:22 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.config.file=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\conf\logging.properties
+七月 23, 2016 5:09:22 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+七月 23, 2016 5:09:22 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.endorsed.dirs=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\endorsed
+七月 23, 2016 5:09:22 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.base=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:09:22 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.home=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:09:22 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.io.tmpdir=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\temp
+七月 23, 2016 5:09:22 下午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: Loaded APR based Apache Tomcat Native library 1.1.33 using APR version 1.5.1.
+七月 23, 2016 5:09:22 下午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+七月 23, 2016 5:09:22 下午 org.apache.catalina.core.AprLifecycleListener initializeSSL
+信息: OpenSSL successfully initialized (OpenSSL 1.0.1m 19 Mar 2015)
+七月 23, 2016 5:09:22 下午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:09:22 下午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:09:22 下午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1244 ms
+七月 23, 2016 5:09:22 下午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+七月 23, 2016 5:09:22 下午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.68
+七月 23, 2016 5:09:23 下午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+七月 23, 2016 5:09:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs
+七月 23, 2016 5:09:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs has finished in 44 ms
+七月 23, 2016 5:09:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples
+七月 23, 2016 5:09:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples has finished in 240 ms
+七月 23, 2016 5:09:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager
+七月 23, 2016 5:09:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager has finished in 49 ms
+七月 23, 2016 5:09:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager
+七月 23, 2016 5:09:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager has finished in 47 ms
+七月 23, 2016 5:09:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT
+七月 23, 2016 5:09:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT has finished in 37 ms
+七月 23, 2016 5:09:23 下午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:09:23 下午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:09:23 下午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 932 ms
+七月 23, 2016 5:13:10 下午 org.apache.catalina.core.StandardServer await
+信息: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+七月 23, 2016 5:13:10 下午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:13:10 下午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:13:10 下午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+七月 23, 2016 5:13:10 下午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:13:10 下午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:13:10 下午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:13:10 下午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:14:34 下午 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:MapTest' did not find a matching property.
+七月 23, 2016 5:14:34 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server version:        Apache Tomcat/7.0.68
+七月 23, 2016 5:14:34 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server built:          Feb 8 2016 20:25:54 UTC
+七月 23, 2016 5:14:34 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server number:         7.0.68.0
+七月 23, 2016 5:14:34 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Name:               Windows 7
+七月 23, 2016 5:14:34 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Version:            6.1
+七月 23, 2016 5:14:34 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Architecture:          x86
+七月 23, 2016 5:14:34 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Java Home:             G:\eclipse workspace\FrameTest\jre
+七月 23, 2016 5:14:34 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Version:           1.8.0_20-b26
+七月 23, 2016 5:14:34 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Vendor:            Oracle Corporation
+七月 23, 2016 5:14:34 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_BASE:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:14:34 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_HOME:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:14:34 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.config.file=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\conf\logging.properties
+七月 23, 2016 5:14:34 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+七月 23, 2016 5:14:34 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.endorsed.dirs=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\endorsed
+七月 23, 2016 5:14:34 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.base=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:14:34 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.home=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:14:34 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.io.tmpdir=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\temp
+七月 23, 2016 5:14:34 下午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: Loaded APR based Apache Tomcat Native library 1.1.33 using APR version 1.5.1.
+七月 23, 2016 5:14:34 下午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+七月 23, 2016 5:14:35 下午 org.apache.catalina.core.AprLifecycleListener initializeSSL
+信息: OpenSSL successfully initialized (OpenSSL 1.0.1m 19 Mar 2015)
+七月 23, 2016 5:14:35 下午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:14:35 下午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:14:35 下午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1403 ms
+七月 23, 2016 5:14:35 下午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+七月 23, 2016 5:14:35 下午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.68
+七月 23, 2016 5:14:35 下午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+七月 23, 2016 5:14:35 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs
+七月 23, 2016 5:14:35 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs has finished in 49 ms
+七月 23, 2016 5:14:35 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples
+七月 23, 2016 5:14:36 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples has finished in 252 ms
+七月 23, 2016 5:14:36 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager
+七月 23, 2016 5:14:36 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager has finished in 49 ms
+七月 23, 2016 5:14:36 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager
+七月 23, 2016 5:14:36 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager has finished in 48 ms
+七月 23, 2016 5:14:36 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT
+七月 23, 2016 5:14:36 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT has finished in 39 ms
+七月 23, 2016 5:14:36 下午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:14:36 下午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:14:36 下午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 865 ms
+七月 23, 2016 5:17:15 下午 org.apache.catalina.core.StandardServer await
+信息: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+七月 23, 2016 5:17:15 下午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:17:15 下午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:17:15 下午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+七月 23, 2016 5:17:15 下午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:17:15 下午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:17:15 下午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:17:15 下午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:17:27 下午 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:MapTest' did not find a matching property.
+七月 23, 2016 5:17:27 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server version:        Apache Tomcat/7.0.68
+七月 23, 2016 5:17:27 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server built:          Feb 8 2016 20:25:54 UTC
+七月 23, 2016 5:17:27 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server number:         7.0.68.0
+七月 23, 2016 5:17:27 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Name:               Windows 7
+七月 23, 2016 5:17:27 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Version:            6.1
+七月 23, 2016 5:17:27 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Architecture:          x86
+七月 23, 2016 5:17:27 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Java Home:             G:\eclipse workspace\FrameTest\jre
+七月 23, 2016 5:17:27 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Version:           1.8.0_20-b26
+七月 23, 2016 5:17:27 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Vendor:            Oracle Corporation
+七月 23, 2016 5:17:27 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_BASE:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:17:27 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_HOME:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:17:27 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.config.file=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\conf\logging.properties
+七月 23, 2016 5:17:27 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+七月 23, 2016 5:17:27 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.endorsed.dirs=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\endorsed
+七月 23, 2016 5:17:27 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.base=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:17:27 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.home=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:17:27 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.io.tmpdir=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\temp
+七月 23, 2016 5:17:27 下午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: Loaded APR based Apache Tomcat Native library 1.1.33 using APR version 1.5.1.
+七月 23, 2016 5:17:27 下午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+七月 23, 2016 5:17:28 下午 org.apache.catalina.core.AprLifecycleListener initializeSSL
+信息: OpenSSL successfully initialized (OpenSSL 1.0.1m 19 Mar 2015)
+七月 23, 2016 5:17:28 下午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:17:28 下午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:17:28 下午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1356 ms
+七月 23, 2016 5:17:28 下午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+七月 23, 2016 5:17:28 下午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.68
+七月 23, 2016 5:17:28 下午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+七月 23, 2016 5:17:29 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs
+七月 23, 2016 5:17:29 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs has finished in 45 ms
+七月 23, 2016 5:17:29 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples
+七月 23, 2016 5:17:29 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples has finished in 248 ms
+七月 23, 2016 5:17:29 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager
+七月 23, 2016 5:17:29 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager has finished in 49 ms
+七月 23, 2016 5:17:29 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager
+七月 23, 2016 5:17:29 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager has finished in 46 ms
+七月 23, 2016 5:17:29 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT
+七月 23, 2016 5:17:29 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT has finished in 38 ms
+七月 23, 2016 5:17:29 下午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:17:29 下午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:17:29 下午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 866 ms
+七月 23, 2016 5:18:22 下午 org.apache.catalina.core.StandardServer await
+信息: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+七月 23, 2016 5:18:22 下午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:18:22 下午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:18:22 下午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+七月 23, 2016 5:18:22 下午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:18:22 下午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:18:22 下午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:18:22 下午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:18:37 下午 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:MapTest' did not find a matching property.
+七月 23, 2016 5:18:37 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server version:        Apache Tomcat/7.0.68
+七月 23, 2016 5:18:37 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server built:          Feb 8 2016 20:25:54 UTC
+七月 23, 2016 5:18:37 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server number:         7.0.68.0
+七月 23, 2016 5:18:37 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Name:               Windows 7
+七月 23, 2016 5:18:37 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Version:            6.1
+七月 23, 2016 5:18:37 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Architecture:          x86
+七月 23, 2016 5:18:37 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Java Home:             G:\eclipse workspace\FrameTest\jre
+七月 23, 2016 5:18:37 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Version:           1.8.0_20-b26
+七月 23, 2016 5:18:37 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Vendor:            Oracle Corporation
+七月 23, 2016 5:18:37 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_BASE:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:18:37 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_HOME:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:18:37 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.config.file=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\conf\logging.properties
+七月 23, 2016 5:18:37 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+七月 23, 2016 5:18:37 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.endorsed.dirs=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\endorsed
+七月 23, 2016 5:18:37 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.base=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:18:37 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.home=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:18:37 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.io.tmpdir=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\temp
+七月 23, 2016 5:18:37 下午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: Loaded APR based Apache Tomcat Native library 1.1.33 using APR version 1.5.1.
+七月 23, 2016 5:18:37 下午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+七月 23, 2016 5:18:38 下午 org.apache.catalina.core.AprLifecycleListener initializeSSL
+信息: OpenSSL successfully initialized (OpenSSL 1.0.1m 19 Mar 2015)
+七月 23, 2016 5:18:38 下午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:18:38 下午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:18:38 下午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1318 ms
+七月 23, 2016 5:18:38 下午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+七月 23, 2016 5:18:38 下午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.68
+七月 23, 2016 5:18:38 下午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+七月 23, 2016 5:18:38 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs
+七月 23, 2016 5:18:38 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs has finished in 47 ms
+七月 23, 2016 5:18:38 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples
+七月 23, 2016 5:18:39 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples has finished in 263 ms
+七月 23, 2016 5:18:39 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager
+七月 23, 2016 5:18:39 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager has finished in 50 ms
+七月 23, 2016 5:18:39 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager
+七月 23, 2016 5:18:39 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager has finished in 47 ms
+七月 23, 2016 5:18:39 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT
+七月 23, 2016 5:18:39 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT has finished in 55 ms
+七月 23, 2016 5:18:39 下午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:18:39 下午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:18:39 下午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 925 ms
+七月 23, 2016 5:19:00 下午 org.apache.catalina.core.StandardServer await
+信息: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+七月 23, 2016 5:19:00 下午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:19:00 下午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:19:00 下午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+七月 23, 2016 5:19:00 下午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:19:00 下午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:19:00 下午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:19:00 下午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:19:21 下午 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:MapTest' did not find a matching property.
+七月 23, 2016 5:19:21 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server version:        Apache Tomcat/7.0.68
+七月 23, 2016 5:19:21 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server built:          Feb 8 2016 20:25:54 UTC
+七月 23, 2016 5:19:21 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server number:         7.0.68.0
+七月 23, 2016 5:19:21 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Name:               Windows 7
+七月 23, 2016 5:19:21 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Version:            6.1
+七月 23, 2016 5:19:21 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Architecture:          x86
+七月 23, 2016 5:19:21 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Java Home:             G:\eclipse workspace\FrameTest\jre
+七月 23, 2016 5:19:21 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Version:           1.8.0_20-b26
+七月 23, 2016 5:19:21 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Vendor:            Oracle Corporation
+七月 23, 2016 5:19:21 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_BASE:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:19:21 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_HOME:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:19:21 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.config.file=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\conf\logging.properties
+七月 23, 2016 5:19:21 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+七月 23, 2016 5:19:21 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.endorsed.dirs=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\endorsed
+七月 23, 2016 5:19:21 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.base=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:19:21 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.home=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:19:21 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.io.tmpdir=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\temp
+七月 23, 2016 5:19:21 下午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: Loaded APR based Apache Tomcat Native library 1.1.33 using APR version 1.5.1.
+七月 23, 2016 5:19:21 下午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+七月 23, 2016 5:19:22 下午 org.apache.catalina.core.AprLifecycleListener initializeSSL
+信息: OpenSSL successfully initialized (OpenSSL 1.0.1m 19 Mar 2015)
+七月 23, 2016 5:19:22 下午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:19:22 下午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:19:22 下午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1286 ms
+七月 23, 2016 5:19:22 下午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+七月 23, 2016 5:19:22 下午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.68
+七月 23, 2016 5:19:22 下午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+七月 23, 2016 5:19:22 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs
+七月 23, 2016 5:19:22 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs has finished in 48 ms
+七月 23, 2016 5:19:22 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples
+七月 23, 2016 5:19:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples has finished in 255 ms
+七月 23, 2016 5:19:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager
+七月 23, 2016 5:19:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager has finished in 53 ms
+七月 23, 2016 5:19:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager
+七月 23, 2016 5:19:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager has finished in 46 ms
+七月 23, 2016 5:19:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT
+七月 23, 2016 5:19:23 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT has finished in 39 ms
+七月 23, 2016 5:19:23 下午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:19:23 下午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:19:23 下午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 901 ms
+七月 23, 2016 5:29:59 下午 org.apache.catalina.core.StandardServer await
+信息: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+七月 23, 2016 5:29:59 下午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:29:59 下午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:29:59 下午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+七月 23, 2016 5:29:59 下午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:29:59 下午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:29:59 下午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:29:59 下午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:30:04 下午 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:MapTest' did not find a matching property.
+七月 23, 2016 5:30:04 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server version:        Apache Tomcat/7.0.68
+七月 23, 2016 5:30:04 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server built:          Feb 8 2016 20:25:54 UTC
+七月 23, 2016 5:30:04 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server number:         7.0.68.0
+七月 23, 2016 5:30:04 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Name:               Windows 7
+七月 23, 2016 5:30:04 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Version:            6.1
+七月 23, 2016 5:30:04 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Architecture:          x86
+七月 23, 2016 5:30:04 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Java Home:             G:\eclipse workspace\FrameTest\jre
+七月 23, 2016 5:30:04 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Version:           1.8.0_20-b26
+七月 23, 2016 5:30:04 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Vendor:            Oracle Corporation
+七月 23, 2016 5:30:04 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_BASE:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:30:04 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_HOME:         G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:30:04 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.config.file=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\conf\logging.properties
+七月 23, 2016 5:30:04 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+七月 23, 2016 5:30:04 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.endorsed.dirs=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\endorsed
+七月 23, 2016 5:30:04 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.base=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:30:04 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.home=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68
+七月 23, 2016 5:30:04 下午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.io.tmpdir=G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\temp
+七月 23, 2016 5:30:04 下午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: Loaded APR based Apache Tomcat Native library 1.1.33 using APR version 1.5.1.
+七月 23, 2016 5:30:04 下午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+七月 23, 2016 5:30:04 下午 org.apache.catalina.core.AprLifecycleListener initializeSSL
+信息: OpenSSL successfully initialized (OpenSSL 1.0.1m 19 Mar 2015)
+七月 23, 2016 5:30:05 下午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:30:05 下午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:30:05 下午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1289 ms
+七月 23, 2016 5:30:05 下午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+七月 23, 2016 5:30:05 下午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.68
+七月 23, 2016 5:30:05 下午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+七月 23, 2016 5:30:05 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs
+七月 23, 2016 5:30:05 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\docs has finished in 44 ms
+七月 23, 2016 5:30:05 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples
+七月 23, 2016 5:30:05 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\examples has finished in 237 ms
+七月 23, 2016 5:30:05 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager
+七月 23, 2016 5:30:05 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\host-manager has finished in 48 ms
+七月 23, 2016 5:30:05 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager
+七月 23, 2016 5:30:05 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\manager has finished in 45 ms
+七月 23, 2016 5:30:05 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT
+七月 23, 2016 5:30:05 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\wangziwei\Spec_for_new_transfer\apache-tomcat-7.0.68\webapps\ROOT has finished in 40 ms
+七月 23, 2016 5:30:05 下午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:30:05 下午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:30:05 下午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 845 ms
+七月 23, 2016 5:35:48 下午 org.apache.catalina.core.StandardServer await
+信息: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+七月 23, 2016 5:35:48 下午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:35:48 下午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:35:48 下午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+七月 23, 2016 5:35:48 下午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:35:48 下午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["ajp-apr-8009"]
+七月 23, 2016 5:35:48 下午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["http-apr-8080"]
+七月 23, 2016 5:35:48 下午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["ajp-apr-8009"]

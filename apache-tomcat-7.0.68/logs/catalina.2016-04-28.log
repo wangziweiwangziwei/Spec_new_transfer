@@ -1,0 +1,482 @@
+四月 28, 2016 10:13:29 上午 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:MapTest' did not find a matching property.
+四月 28, 2016 10:13:29 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server version:        Apache Tomcat/7.0.68
+四月 28, 2016 10:13:29 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server built:          Feb 8 2016 20:25:54 UTC
+四月 28, 2016 10:13:29 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server number:         7.0.68.0
+四月 28, 2016 10:13:29 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Name:               Windows 7
+四月 28, 2016 10:13:29 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Version:            6.1
+四月 28, 2016 10:13:29 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Architecture:          x86
+四月 28, 2016 10:13:29 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Java Home:             G:\eclipse workspace\FrameTest\jre
+四月 28, 2016 10:13:29 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Version:           1.8.0_20-b26
+四月 28, 2016 10:13:29 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Vendor:            Oracle Corporation
+四月 28, 2016 10:13:29 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_BASE:         G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68
+四月 28, 2016 10:13:29 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_HOME:         G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68
+四月 28, 2016 10:13:29 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.config.file=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\conf\logging.properties
+四月 28, 2016 10:13:29 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+四月 28, 2016 10:13:29 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.endorsed.dirs=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\endorsed
+四月 28, 2016 10:13:29 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.base=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68
+四月 28, 2016 10:13:29 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.home=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68
+四月 28, 2016 10:13:29 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.io.tmpdir=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\temp
+四月 28, 2016 10:13:29 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: Loaded APR based Apache Tomcat Native library 1.1.33 using APR version 1.5.1.
+四月 28, 2016 10:13:29 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+四月 28, 2016 10:13:29 上午 org.apache.catalina.core.AprLifecycleListener initializeSSL
+信息: OpenSSL successfully initialized (OpenSSL 1.0.1m 19 Mar 2015)
+四月 28, 2016 10:13:30 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 10:13:30 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-apr-8009"]
+四月 28, 2016 10:13:30 上午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 3205 ms
+四月 28, 2016 10:13:30 上午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+四月 28, 2016 10:13:30 上午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.68
+四月 28, 2016 10:13:31 上午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+四月 28, 2016 10:13:31 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\docs
+四月 28, 2016 10:13:31 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\docs has finished in 64 ms
+四月 28, 2016 10:13:31 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\examples
+四月 28, 2016 10:13:32 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\examples has finished in 432 ms
+四月 28, 2016 10:13:32 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\host-manager
+四月 28, 2016 10:13:32 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\host-manager has finished in 62 ms
+四月 28, 2016 10:13:32 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\manager
+四月 28, 2016 10:13:32 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\manager has finished in 47 ms
+四月 28, 2016 10:13:32 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\ROOT
+四月 28, 2016 10:13:32 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\ROOT has finished in 52 ms
+四月 28, 2016 10:13:32 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 10:13:32 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["ajp-apr-8009"]
+四月 28, 2016 10:13:32 上午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 1665 ms
+四月 28, 2016 10:16:22 上午 org.apache.catalina.core.StandardServer await
+信息: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+四月 28, 2016 10:16:22 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 10:16:22 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["ajp-apr-8009"]
+四月 28, 2016 10:16:22 上午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+四月 28, 2016 10:16:22 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 10:16:22 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["ajp-apr-8009"]
+四月 28, 2016 10:16:22 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 10:16:22 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["ajp-apr-8009"]
+四月 28, 2016 10:19:57 上午 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:MapTest' did not find a matching property.
+四月 28, 2016 10:19:57 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server version:        Apache Tomcat/7.0.68
+四月 28, 2016 10:19:57 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server built:          Feb 8 2016 20:25:54 UTC
+四月 28, 2016 10:19:57 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server number:         7.0.68.0
+四月 28, 2016 10:19:57 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Name:               Windows 7
+四月 28, 2016 10:19:57 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Version:            6.1
+四月 28, 2016 10:19:57 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Architecture:          x86
+四月 28, 2016 10:19:57 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Java Home:             G:\eclipse workspace\FrameTest\jre
+四月 28, 2016 10:19:57 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Version:           1.8.0_20-b26
+四月 28, 2016 10:19:57 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Vendor:            Oracle Corporation
+四月 28, 2016 10:19:57 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_BASE:         G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68
+四月 28, 2016 10:19:57 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_HOME:         G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68
+四月 28, 2016 10:19:57 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.config.file=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\conf\logging.properties
+四月 28, 2016 10:19:57 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+四月 28, 2016 10:19:57 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.endorsed.dirs=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\endorsed
+四月 28, 2016 10:19:57 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.base=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68
+四月 28, 2016 10:19:57 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.home=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68
+四月 28, 2016 10:19:57 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.io.tmpdir=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\temp
+四月 28, 2016 10:19:57 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: Loaded APR based Apache Tomcat Native library 1.1.33 using APR version 1.5.1.
+四月 28, 2016 10:19:57 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+四月 28, 2016 10:19:57 上午 org.apache.catalina.core.AprLifecycleListener initializeSSL
+信息: OpenSSL successfully initialized (OpenSSL 1.0.1m 19 Mar 2015)
+四月 28, 2016 10:19:57 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 10:19:57 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-apr-8009"]
+四月 28, 2016 10:19:57 上午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1144 ms
+四月 28, 2016 10:19:57 上午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+四月 28, 2016 10:19:57 上午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.68
+四月 28, 2016 10:19:58 上午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+四月 28, 2016 10:19:58 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\docs
+四月 28, 2016 10:19:58 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\docs has finished in 59 ms
+四月 28, 2016 10:19:58 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\examples
+四月 28, 2016 10:19:58 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\examples has finished in 304 ms
+四月 28, 2016 10:19:58 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\host-manager
+四月 28, 2016 10:19:58 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\host-manager has finished in 54 ms
+四月 28, 2016 10:19:58 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\manager
+四月 28, 2016 10:19:58 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\manager has finished in 54 ms
+四月 28, 2016 10:19:58 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\ROOT
+四月 28, 2016 10:19:58 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\ROOT has finished in 51 ms
+四月 28, 2016 10:19:58 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 10:19:58 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["ajp-apr-8009"]
+四月 28, 2016 10:19:58 上午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 1010 ms
+四月 28, 2016 10:20:45 上午 org.apache.catalina.core.StandardServer await
+信息: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+四月 28, 2016 10:20:45 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 10:20:45 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["ajp-apr-8009"]
+四月 28, 2016 10:20:45 上午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+四月 28, 2016 10:20:45 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 10:20:45 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["ajp-apr-8009"]
+四月 28, 2016 10:20:45 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 10:20:45 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["ajp-apr-8009"]
+四月 28, 2016 10:57:30 上午 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:MapTest' did not find a matching property.
+四月 28, 2016 10:57:30 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server version:        Apache Tomcat/7.0.68
+四月 28, 2016 10:57:30 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server built:          Feb 8 2016 20:25:54 UTC
+四月 28, 2016 10:57:30 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server number:         7.0.68.0
+四月 28, 2016 10:57:30 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Name:               Windows 7
+四月 28, 2016 10:57:30 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Version:            6.1
+四月 28, 2016 10:57:30 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Architecture:          x86
+四月 28, 2016 10:57:30 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Java Home:             G:\eclipse workspace\FrameTest\jre
+四月 28, 2016 10:57:30 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Version:           1.8.0_20-b26
+四月 28, 2016 10:57:30 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Vendor:            Oracle Corporation
+四月 28, 2016 10:57:30 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_BASE:         G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68
+四月 28, 2016 10:57:30 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_HOME:         G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68
+四月 28, 2016 10:57:30 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.config.file=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\conf\logging.properties
+四月 28, 2016 10:57:30 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+四月 28, 2016 10:57:30 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.endorsed.dirs=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\endorsed
+四月 28, 2016 10:57:30 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.base=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68
+四月 28, 2016 10:57:30 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.home=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68
+四月 28, 2016 10:57:30 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.io.tmpdir=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\temp
+四月 28, 2016 10:57:30 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: Loaded APR based Apache Tomcat Native library 1.1.33 using APR version 1.5.1.
+四月 28, 2016 10:57:30 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+四月 28, 2016 10:57:31 上午 org.apache.catalina.core.AprLifecycleListener initializeSSL
+信息: OpenSSL successfully initialized (OpenSSL 1.0.1m 19 Mar 2015)
+四月 28, 2016 10:57:31 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 10:57:31 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-apr-8009"]
+四月 28, 2016 10:57:31 上午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1262 ms
+四月 28, 2016 10:57:31 上午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+四月 28, 2016 10:57:31 上午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.68
+四月 28, 2016 10:57:31 上午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+四月 28, 2016 10:57:32 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\docs
+四月 28, 2016 10:57:32 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\docs has finished in 47 ms
+四月 28, 2016 10:57:32 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\examples
+四月 28, 2016 10:57:32 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\examples has finished in 296 ms
+四月 28, 2016 10:57:32 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\host-manager
+四月 28, 2016 10:57:32 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\host-manager has finished in 47 ms
+四月 28, 2016 10:57:32 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\manager
+四月 28, 2016 10:57:32 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\manager has finished in 62 ms
+四月 28, 2016 10:57:32 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\ROOT
+四月 28, 2016 10:57:32 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\ROOT has finished in 47 ms
+四月 28, 2016 10:57:32 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 10:57:32 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["ajp-apr-8009"]
+四月 28, 2016 10:57:32 上午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 1039 ms
+四月 28, 2016 11:01:20 上午 org.apache.catalina.core.StandardServer await
+信息: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+四月 28, 2016 11:01:20 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 11:01:20 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["ajp-apr-8009"]
+四月 28, 2016 11:01:20 上午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+四月 28, 2016 11:01:20 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 11:01:20 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["ajp-apr-8009"]
+四月 28, 2016 11:01:20 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 11:01:20 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["ajp-apr-8009"]
+四月 28, 2016 11:01:36 上午 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:MapTest' did not find a matching property.
+四月 28, 2016 11:01:36 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server version:        Apache Tomcat/7.0.68
+四月 28, 2016 11:01:36 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server built:          Feb 8 2016 20:25:54 UTC
+四月 28, 2016 11:01:36 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server number:         7.0.68.0
+四月 28, 2016 11:01:36 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Name:               Windows 7
+四月 28, 2016 11:01:36 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Version:            6.1
+四月 28, 2016 11:01:36 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Architecture:          x86
+四月 28, 2016 11:01:36 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Java Home:             G:\eclipse workspace\FrameTest\jre
+四月 28, 2016 11:01:36 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Version:           1.8.0_20-b26
+四月 28, 2016 11:01:36 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Vendor:            Oracle Corporation
+四月 28, 2016 11:01:36 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_BASE:         G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68
+四月 28, 2016 11:01:36 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_HOME:         G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68
+四月 28, 2016 11:01:36 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.config.file=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\conf\logging.properties
+四月 28, 2016 11:01:36 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+四月 28, 2016 11:01:36 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.endorsed.dirs=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\endorsed
+四月 28, 2016 11:01:36 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.base=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68
+四月 28, 2016 11:01:36 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.home=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68
+四月 28, 2016 11:01:36 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.io.tmpdir=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\temp
+四月 28, 2016 11:01:36 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: Loaded APR based Apache Tomcat Native library 1.1.33 using APR version 1.5.1.
+四月 28, 2016 11:01:36 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+四月 28, 2016 11:01:36 上午 org.apache.catalina.core.AprLifecycleListener initializeSSL
+信息: OpenSSL successfully initialized (OpenSSL 1.0.1m 19 Mar 2015)
+四月 28, 2016 11:01:36 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 11:01:36 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-apr-8009"]
+四月 28, 2016 11:01:36 上午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1182 ms
+四月 28, 2016 11:01:36 上午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+四月 28, 2016 11:01:36 上午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.68
+四月 28, 2016 11:01:37 上午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+四月 28, 2016 11:01:37 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\docs
+四月 28, 2016 11:01:37 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\docs has finished in 47 ms
+四月 28, 2016 11:01:37 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\examples
+四月 28, 2016 11:01:37 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\examples has finished in 265 ms
+四月 28, 2016 11:01:37 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\host-manager
+四月 28, 2016 11:01:37 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\host-manager has finished in 47 ms
+四月 28, 2016 11:01:37 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\manager
+四月 28, 2016 11:01:37 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\manager has finished in 47 ms
+四月 28, 2016 11:01:37 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\ROOT
+四月 28, 2016 11:01:37 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\ROOT has finished in 48 ms
+四月 28, 2016 11:01:37 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 11:01:37 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["ajp-apr-8009"]
+四月 28, 2016 11:01:37 上午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 911 ms
+四月 28, 2016 11:02:08 上午 org.apache.catalina.core.StandardServer await
+信息: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+四月 28, 2016 11:02:08 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 11:02:08 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["ajp-apr-8009"]
+四月 28, 2016 11:02:08 上午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+四月 28, 2016 11:02:08 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 11:02:08 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["ajp-apr-8009"]
+四月 28, 2016 11:02:08 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 11:02:08 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["ajp-apr-8009"]
+四月 28, 2016 11:10:53 上午 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:MapTest' did not find a matching property.
+四月 28, 2016 11:10:53 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server version:        Apache Tomcat/7.0.68
+四月 28, 2016 11:10:53 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server built:          Feb 8 2016 20:25:54 UTC
+四月 28, 2016 11:10:53 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server number:         7.0.68.0
+四月 28, 2016 11:10:53 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Name:               Windows 7
+四月 28, 2016 11:10:53 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Version:            6.1
+四月 28, 2016 11:10:53 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Architecture:          x86
+四月 28, 2016 11:10:53 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Java Home:             G:\eclipse workspace\FrameTest\jre
+四月 28, 2016 11:10:53 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Version:           1.8.0_20-b26
+四月 28, 2016 11:10:53 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Vendor:            Oracle Corporation
+四月 28, 2016 11:10:53 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_BASE:         G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68
+四月 28, 2016 11:10:53 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_HOME:         G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68
+四月 28, 2016 11:10:53 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.config.file=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\conf\logging.properties
+四月 28, 2016 11:10:53 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+四月 28, 2016 11:10:53 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.endorsed.dirs=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\endorsed
+四月 28, 2016 11:10:53 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.base=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68
+四月 28, 2016 11:10:53 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.home=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68
+四月 28, 2016 11:10:53 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.io.tmpdir=G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\temp
+四月 28, 2016 11:10:53 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: Loaded APR based Apache Tomcat Native library 1.1.33 using APR version 1.5.1.
+四月 28, 2016 11:10:53 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+四月 28, 2016 11:10:54 上午 org.apache.catalina.core.AprLifecycleListener initializeSSL
+信息: OpenSSL successfully initialized (OpenSSL 1.0.1m 19 Mar 2015)
+四月 28, 2016 11:10:54 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 11:10:54 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-apr-8009"]
+四月 28, 2016 11:10:54 上午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1252 ms
+四月 28, 2016 11:10:54 上午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+四月 28, 2016 11:10:54 上午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.68
+四月 28, 2016 11:10:54 上午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+四月 28, 2016 11:10:54 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\docs
+四月 28, 2016 11:10:54 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\docs has finished in 47 ms
+四月 28, 2016 11:10:54 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\examples
+四月 28, 2016 11:10:55 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\examples has finished in 249 ms
+四月 28, 2016 11:10:55 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\host-manager
+四月 28, 2016 11:10:55 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\host-manager has finished in 47 ms
+四月 28, 2016 11:10:55 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\manager
+四月 28, 2016 11:10:55 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\manager has finished in 62 ms
+四月 28, 2016 11:10:55 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\ROOT
+四月 28, 2016 11:10:55 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory G:\eclipse workspace\FrameTest\apache-tomcat-7.0.68\webapps\ROOT has finished in 32 ms
+四月 28, 2016 11:10:55 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 11:10:55 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["ajp-apr-8009"]
+四月 28, 2016 11:10:55 上午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 892 ms
+四月 28, 2016 11:12:14 上午 org.apache.catalina.core.StandardServer await
+信息: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+四月 28, 2016 11:12:14 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 11:12:14 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["ajp-apr-8009"]
+四月 28, 2016 11:12:14 上午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+四月 28, 2016 11:12:14 上午 org.apache.catalina.loader.WebappClassLoaderBase clearReferencesJdbc
+严重: The web application [/MapTest] registered the JDBC driver [org.sqlite.JDBC] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+四月 28, 2016 11:12:14 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 11:12:14 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["ajp-apr-8009"]
+四月 28, 2016 11:12:14 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["http-apr-8080"]
+四月 28, 2016 11:12:14 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["ajp-apr-8009"]

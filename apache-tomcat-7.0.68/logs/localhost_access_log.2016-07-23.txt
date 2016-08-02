@@ -1,0 +1,7 @@
+127.0.0.1 - - [23/Jul/2016:10:31:50 +0800] "GET /MapTest/map.jsp HTTP/1.1" 200 43588
+127.0.0.1 - - [23/Jul/2016:10:31:50 +0800] "GET /MapTest/imgs/colorbar.png HTTP/1.1" 200 1825
+127.0.0.1 - - [23/Jul/2016:10:36:34 +0800] "GET /MapTest/map.jsp HTTP/1.1" 200 43588
+127.0.0.1 - - [23/Jul/2016:10:37:22 +0800] "POST /MapTest/QueryDataBase HTTP/1.1" 200 51
+127.0.0.1 - - [23/Jul/2016:10:38:28 +0800] "POST /MapTest/QueryDataBase HTTP/1.1" 200 810
+127.0.0.1 - - [23/Jul/2016:10:44:56 +0800] "GET /MapTest/map.jsp HTTP/1.1" 200 43588
+127.0.0.1 - - [23/Jul/2016:10:47:29 +0800] "GET /MapTest/map.jsp HTTP/1.1" 200 43588

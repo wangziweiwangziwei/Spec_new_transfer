@@ -1,0 +1,6 @@
+[0422/201445:WARNING:dns_config_service_win.cc(653)] Failed to read DnsConfig.
+[0422/201610:WARNING:dns_config_service_win.cc(653)] Failed to read DnsConfig.
+[0422/202004:INFO:CONSOLE(1)] "Uncaught TypeError: Cannot call method 'Te' of undefined", source: http://localhost:8080/MapTest/map.jsp (1)
+[0428/095027:ERROR:gpu_info_collector_win.cc(146)] Could not read gaming score from assessment results.
+[0428/101325:ERROR:gpu_info_collector_win.cc(146)] Could not read gaming score from assessment results.
+[0428/101956:ERROR:gpu_info_collector_win.cc(146)] Could not read gaming score from assessment results.
