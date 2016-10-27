@@ -23,7 +23,7 @@ import struct
 from threading import Thread
 from src.CommonUse.byte_2_package import ByteToPackage
 from numpy import linspace
-
+from src.Package.logg import Log
 ############中心站响应数据接收##################################
 class ReceiveServerData(threading.Thread): 
     def __init__(self,mainframe): 
@@ -48,11 +48,12 @@ class ReceiveServerData(threading.Thread):
 
         self.send_file_iq_class=class_upload_iq.SendIQFile(self.mainframe)
 
-        self.send_file_poa_class=class_upload_poa.SendPoaFile(self.mainframe.queuePoa)
+        self.send_file_poa_class=class_upload_poa.SendPoaFile()
 
-        self.send_file_tdoa_class=class_upload_tdoa.SendTdoaFile(mainframe)
+        self.send_file_tdoa_class=class_upload_tdoa.SendTdoaFile()
 
         self.count_heart_beat=0
+        self.thread_timer=0
         self.thread_timer=0
         '''0:spec   1:iq    2: POA  3: TDOA  文件上传'''
         self.switch_to_transfer=0
@@ -65,6 +66,7 @@ class ReceiveServerData(threading.Thread):
         self.thread_timer=1 #控制定时心跳线程开启
         self.sock.sendall(struct.pack("!B", 0x55))
         self.sock.sendall(struct.pack("!B", 0x66))
+        Log.getLogger().debug("###send heartbeat to server####")
         self.count_heart_beat+=1
         time.sleep(15)
         self.thread_timer=0
@@ -95,20 +97,30 @@ class ReceiveServerData(threading.Thread):
             else:
                 if(len(readyOutput)):
                     for outsock in readyOutput:
-                        try:
-                            if outsock == self.sock:
-                                # 发送服务请求
+
+                        if outsock == self.sock:
+                            # 发送服务请求
+                            try:
                                 if(not self.mainframe.queueRequest.empty() ):
                                     obj=self.mainframe.queueRequest.get()
                                     self.sock.sendall(bytearray(obj))
+                                    Log.getLogger().debug(" send the request to server: %s" % obj)
+
                                 else:
                                     if(self.thread_timer==0):
                                         thread=Thread(target=self.hello)
                                         thread.start()
+                            except socket.error, e:
+                                print e.message, '--->send_in_sock'
+                                Log.getLogger().debug(" socket_error_found_in_self.sock_send_process: %s" % e)
+                                Log.getLogger().debug(" Cur self.sock: %s" % self.sock)
 
+                                self.ReConnect()
 
-                                #发送文件（POA，TDOA，功率谱，IQ 四种文件）
-                            elif outsock == self.sockFile:
+                            #发送文件（POA，TDOA，功率谱，IQ 四种文件）
+                        elif outsock == self.sockFile:
+                            try:
+
                                 if(self.switch_to_transfer==0):
                                     self.send_file_class.SendSpec()
                                 elif(self.switch_to_transfer==1):
@@ -120,9 +132,12 @@ class ReceiveServerData(threading.Thread):
                                     self.send_file_tdoa_class.upload_tdoa()
 
 
-                        except socket.error,e:
-                            print e.message
-                            self.ReConnect()
+                            except socket.error,e:
+                                print e.message,'--->send_in_sockFile'
+                                Log.getLogger().debug(" socket_error_found_in_self.sockFile_send_process: %s" % e)
+                                Log.getLogger().debug(" Cur self.sockFile: %s" % self.sockFile)
+
+                                self.ReConnect()
 
 
 
@@ -136,6 +151,8 @@ class ReceiveServerData(threading.Thread):
                                 for i in data:
                                     ListData.append(ord(i))
                                 if(len(ListData)==2):
+                                    Log.getLogger().debug("Read command from server")
+
                                     self.funcParaDecide(dataLen, ListData)
 
 
@@ -160,6 +177,25 @@ class ReceiveServerData(threading.Thread):
 
                             elif insock == self.sockFile:
                                 self.sockFile.recv(1024)
+                                '''
+                                self.sockFile.recv(2)
+                                list1=[]
+                                data = self.sockFile.recv(2)
+                                for i in data:
+                                    list1.append(ord(i))
+                                fileNameLen=(list1[0]<<8)+(list1[1])
+                                fileName=''
+                                data=self.sockFile.recv(fileNameLen)
+                                for i in data:
+                                    fileName+=chr(ord(i))
+
+                                print fileName ,' recv filename'
+
+                                if(self.switch_to_transfer==3):
+                                    os.remove(os.getcwd()+"\\LocalData\\Tdoa\\" + fileName)
+                                elif(self.switch_to_transfer==2):
+                                    os.remove(os.getcwd()+"\\LocalData\\Poa\\" + fileName)
+                                '''
 
                                 # print 'ready input ---sockFile---'
                                 #
@@ -176,34 +212,50 @@ class ReceiveServerData(threading.Thread):
                                 #     staticVar.sockFile=0
                                 #     self.input1=[]
                     except socket.error,e:
-                        print e.message
+                        print e.message,'--->>>input'
+                        Log.getLogger().debug(" socket_error_found_in_recv_server_command: %s",e)
+                        Log.getLogger().debug(" Cur self.sock: %s" % self.sock)
+                        Log.getLogger().debug(" Cur self.sockFile: %s" % self.sockFile)
+
+
                         self.ReConnect()
 
 
 
                 if (len(readyException)):
-                    self.ReConnect()
+                    for i in readyException:
+                        print i.message,'--->exception'
+                        Log.getLogger().debug("Find some Exception: %s"%(i.message))
+                        Log.getLogger().debug(" Cur self.sock: %s" % self.sock)
+                        Log.getLogger().debug(" Cur self.sockFile: %s" % self.sockFile)
+                    #self.ReConnect()
 
 
-    def setTick(self,begin,end):
+    def setTick(self,begin_lab,end_lab,begin,end):
         ###设置线条的xdata################
-        begin = int(round(begin))
-        end = int(round(end))
+        begin_lab = int(round(begin_lab))
+        end_lab = int(round(end_lab))
+        
 
-        xx = linspace(begin, end, 1024)
+        xx = linspace(begin, end, 1024)        
+        
         self.mainframe.SpecFrame.panelFigure.lineSpec.set_xdata(xx)
         self.mainframe.SpecFrame.panelFigure.lineSpecBack.set_xdata(xx)
 
         ##设置显示范围（包括文本框和Label）####################
-        self.mainframe.FreqMin = begin
-        self.mainframe.FreqMax = end
-        self.mainframe.SpecFrame.panelFigure.Min_X.SetLabel(str(begin))
-        self.mainframe.SpecFrame.panelFigure.Max_X.SetLabel(str(end))
+        self.mainframe.FreqMin = begin_lab
+        self.mainframe.FreqMax = end_lab
+        self.mainframe.SpecFrame.panelFigure.Min_X.SetLabel(str(begin_lab))
+        self.mainframe.SpecFrame.panelFigure.Max_X.SetLabel(str(end_lab))
 
-        self.mainframe.SpecFrame.panelFigure.setSpLabel(begin, end)
+        self.mainframe.SpecFrame.panelFigure.setSpLabel(begin_lab, end_lab)
 
 
     def ReConnect(self):
+        Log.getLogger().debug("---Start reconnect--")
+
+
+        print 'reconnect---------------reconnect------------------->>>>>>>>>>>>'
         flag_sock = 0
         flag_sockFile = 0
         count = 0
@@ -211,9 +263,15 @@ class ReceiveServerData(threading.Thread):
         self.rlist = []
         self.wlist = []
         self.xlist = []
-
+        try:
+            staticVar.sock.close()
+            staticVar.sockFile.close()
+        except Exception , e:
+            pass
         staticVar.sock=0
         staticVar.sockFile=0
+        
+        
         self.count_heart_beat=0
         staticVar.count_heart_beat=0
 
@@ -283,6 +341,10 @@ class ReceiveServerData(threading.Thread):
             self.wlist = [self.sock, self.sockFile]
             self.xlist = [self.sock, self.sockFile]
 
+            Log.getLogger().debug(" ---ReConnect Complete---")
+            Log.getLogger().debug(" Cur self.sock: %s" % self.sock)
+            Log.getLogger().debug(" Cur self.sockFile: %s" % self.sockFile)
+
 
     def historyDataDecide(self,ListData):
         BUFSIZE=4096
@@ -318,13 +380,13 @@ class ReceiveServerData(threading.Thread):
     def saveFile(self,fileName,Content):
         ##########SaveToLocal#####################
 #         fid=open(".\LocalData\\"+ fileName,'wb+')
-        if(not os.path.exists("../LocalData//SpecHistory//")):
-            os.makedirs('../LocalData//SpecHistory//')
-            os.makedirs('../LocalData//IQHistory//')
+        if(not os.path.exists("./LocalData//SpecHistory//")):
+            os.makedirs('./LocalData//SpecHistory//')
+            os.makedirs('./LocalData//IQHistory//')
             
-        dir='../LocalData//SpecHistory//'
+        dir='./LocalData//SpecHistory//'
         if(fileName[-2:]=='iq'):
-            dir='../LocalData//IQHistory//'
+            dir='./LocalData//IQHistory//'
             
         fileName1=''
         for i in fileName:
@@ -339,8 +401,12 @@ class ReceiveServerData(threading.Thread):
         if(ListData[0]==0x77 and ListData[1]==0x88):
             print '#### server heart beat #####'
             staticVar.count_heart_beat+=1
+            Log.getLogger().debug("##Receive Server HeartBeat##")
+
             if(abs(self.count_heart_beat-staticVar.count_heart_beat)>2):
                 print 'heart beat stop'
+                Log.getLogger().debug("##HeartBeat is not equal ##")
+
                 raise socket.error
 
             
@@ -361,6 +427,13 @@ class ReceiveServerData(threading.Thread):
                     self.sock.recv(5)
                     staticFileUp.setUploadMode(2)
 
+                elif(frameFlag==6):  #模板下发
+                    data=self.sock.recv(257)
+                    for i in data:
+                        ListData.append(ord(i))
+                    self.outPoint.write(bytearray(ListData))
+
+
 
                 else:
                     data=self.sock.recv(15)
@@ -372,25 +445,29 @@ class ReceiveServerData(threading.Thread):
                         byte_to_pacakge=ByteToPackage()
                         obj=byte_to_pacakge.ByteToSweepRange(ListData)
 
-                        staticFileUp.setUploadMode(obj.FileUploadMode)
+                        staticFileUp.setUploadMode(obj.FileUploadMode-1)
                         staticFileUp.setUploadMode(obj.ExtractM)
 
-                        begin= 70+(obj.StartSectionNo-1 )*25 +\
-                        ((obj.HighStartFreq<<2)+(obj.LowStartFreq))*25.0/1024
-                        end =  70+(obj.EndSectionNo-1 )*25 +\
-                        ((obj.HighEndFreq <<2)+(obj.LowEndFreq))*25.0/1024
 
-                        self.setTick(begin,end)
+                        begin_lab= 70+(obj.StartSectionNo-1 )*25 +\
+                        ((obj.HighStartFreq<<8)+(obj.LowStartFreq))*25.0/1024
+                        end_lab =  70+(obj.EndSectionNo-1 )*25 +\
+                        ((obj.HighEndFreq <<8)+(obj.LowEndFreq))*25.0/1024
+
+                        begin = 70+(obj.StartSectionNo-1 )*25
+                        end = 70+(obj.EndSectionNo)*25
+                        
+                        self.setTick(begin_lab,end_lab,begin,end)
 
                     self.outPoint.write(bytearray(ListData))
 
-                    '''不以线程形式发送 '''
+
                     if (frameFlag == 0x02):
                         thread = thread_recv_iq.ReceiveIQThread(self.mainframe)
 
                         thread.start()
                         self.switch_to_transfer=1
-                        print 'its ok----------------------------------'
+
 
 
                 '''
@@ -428,12 +505,21 @@ class ReceiveServerData(threading.Thread):
                 else:
                     self.outPoint.write(bytearray(ListData))
                     li=0
-                    try:
-                        li = list(staticVar.inPointRecv.read(200,100))
-                    except Exception,e:
-                        pass
+                    count=0
+                    while(count<3):
+                        try:
+                            li = list(staticVar.inPointRecv.read(260,100))
+                            if(li): break
+                        except Exception,e:
+                            time.sleep(0.5)
+                            count+= 1
+                            print e
+
                     if(not li == 0):
-                        self.sock.sendall(bytearray(li))
+                        if(len(li)==260):
+                            self.sock.sendall(bytearray(li[0:-1]))
+                        else:
+                            self.sock.sendall(bytearray(li))
 
             
             elif(frameFlag==0x41 or frameFlag==0x42):
@@ -517,12 +603,17 @@ class ReceiveServerData(threading.Thread):
                 HighEndFreq=ListData[9]&0x03
                 LowEndFreq=ListData[10]
 
-                begin = 70 + (StartSectionNo - 1) * 25 + \
-                        ((HighStartFreq << 2) + (LowStartFreq)) * 25.0 / 1024
-                end = 70 + (EndSectionNo - 1) * 25 + \
-                      ((HighEndFreq << 2) + (LowEndFreq)) * 25.0 / 1024
+                begin_lab = 70 + (StartSectionNo - 1) * 25 + \
+                        ((HighStartFreq << 8) + (LowStartFreq)) * 25.0 / 1024
+                end_lab = 70 + (EndSectionNo - 1) * 25 + \
+                      ((HighEndFreq << 8) + (LowEndFreq)) * 25.0 / 1024
 
-                self.setTick(begin, end)
+                begin = 70+(StartSectionNo-1 )*25
+                end = 70+(EndSectionNo)*25
+                      
+                
+
+                self.setTick(begin_lab,end_lab,begin,end)
 
                 self.outPoint.write(bytearray(ListData))
                 print 'stop command has been write'
@@ -532,6 +623,10 @@ class ReceiveServerData(threading.Thread):
                     self.mainframe.thread_recvfft.event.set()
 
                 self.switch_to_transfer=0
+
+                self.remove( os.getcwd()+"\\LocalData\\Tdoa\\")
+                self.remove( os.getcwd()+"\\LocalData\\Poa\\")
+
 
             elif(frameFlag==177):
                 data=self.sock.recv(16)
@@ -605,6 +700,19 @@ class ReceiveServerData(threading.Thread):
                 
                 else:
                     print 'frameFlag error'
+
+    def remove(self,delDir):
+        delList = []  
+       
+        delList = os.listdir(delDir )  
+          
+        for f in delList:  
+            filePath = os.path.join( delDir, f )  
+            if os.path.isfile(filePath):  
+                os.remove(filePath)  
+                 
+        
+
     
     def RecvContent(self,sock,dataLen,ListData,BUFSIZE):
         dataLength=(dataLen[0]<<56)+(dataLen[1]<<48)+(dataLen[2]<<40)+ \
@@ -620,16 +728,14 @@ class ReceiveServerData(threading.Thread):
      
     def ReadConnect(self,ListData):
         print ' response from server'
+        Log.getLogger().debug("##Connect Response from Server##")
+
         if(ListData[4]==0x0F):
             TerminalType=ListData[5]
             Pos=self.ByteToPos(ListData[6:15])
-            wx.MessageBox(u'服务器同意连接!' +'\n'+
-                           u'终端类型:  '+ u'专业终端'+'\n'+
-                          u'经度: '+str(Pos[0])+'\n'+  \
-                          u'纬度:  ' +str(Pos[1])+'\n'+  \
-                           u'高度  '+str(Pos[2]) , 'Info',wx.ICON_EXCLAMATION| wx.STAY_ON_TOP)
 
 
+                        
 
         else:
             wx.MessageBox(u'服务器拒绝连接', \

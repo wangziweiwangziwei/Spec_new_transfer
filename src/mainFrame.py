@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 
 ###########################################################################
 ## Python code generated with wxFormBuilder (version Jun 17 2015)
@@ -6,10 +6,11 @@
 ##
 ## PLEASE DO "NOT" EDIT THIS FILE!
 ###########################################################################
+import LoadFirm
 import webbrowser
 import wx
 import wx.xrc
-import wx.aui 
+import wx.aui
 import matplotlib
 import Queue
 import os
@@ -50,13 +51,34 @@ from src.Thread.thread_recvfft import ReceiveFFTThread
 ###########################################################################
 
 class MainFrame ( wx.aui.AuiMDIParentFrame ):
-    
+
     def __init__( self, parent ):
         wx.aui.AuiMDIParentFrame.__init__ ( self, parent, -1, title = wx.EmptyString,
         pos = wx.DefaultPosition, size = wx.Size( 887,545 ),
         style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
-        bmp = wx.Image("..//icons//title_2.jpg", wx.BITMAP_TYPE_ANY).ConvertToBitmap()
+        ''' 首先加载硬件的东西 '''
+
+        #################################
+
+        staticVar.setid(18)  # 初始化id
+
+        ############### hard wave config ######################
+#         value=0
+# 
+#         for i in range(2):
+#             value = LoadFirm.load_firmware(r"D:\SlaveFifoSync5Bit.img")
+# 
+#         if (value == 1):
+#             raise Exception('can not load firm wave ')
+# 
+#         staticVar.initPort()  # 初始化硬件 端口
+
+        ############################################
+
+
+
+        bmp = wx.Image("..//icons//title.jpg", wx.BITMAP_TYPE_ANY).ConvertToBitmap()
         wx.SplashScreen(bmp, wx.SPLASH_CENTER_ON_SCREEN | wx.SPLASH_TIMEOUT,2000, None, -1)
         wx.Yield()
 
@@ -77,8 +99,8 @@ class MainFrame ( wx.aui.AuiMDIParentFrame ):
 
         #######################################
 #         os.chdir("./apache-tomcat-7.0.68//bin//")
-        os.chdir("../apache-tomcat-7.0.68//bin//")
-        
+#         os.chdir("./apache-tomcat-7.0.68//bin//")
+
         os.system("startup.bat")
         dirname, filename = os.path.split(os.path.abspath(sys.argv[0]))
         os.chdir(dirname)
@@ -94,31 +116,28 @@ class MainFrame ( wx.aui.AuiMDIParentFrame ):
 
 
         self.frame_count=0    #打开的窗口数量#
-        
+
         self.FreqMin=70
         self.FreqMax=5995
-        
+
         self.tail=FrameTail(0,0,0xAA)
         #### 窗口################
-        self.SpecFrame=Spectrum_1.Spec(self)
+        self.SpecFrame=Spectrum_1.Spec(self,1)
         self.SpecFrame.Activate()
 
         self.WaterFrame=None
         self.WaveFrame=None
-        
-        self.MapFrame=None 
-        
-        #################################
 
-        staticVar.setid(18) #初始化id
-        
-        print staticVar.getid()
-      
-#         staticVar.initPort()  #初始化硬件 端口
+        self.MapFrame=None
+        self.TojiFrame = None
+
+        self.HistorySpecFrame = Spectrum_1.Spec(self , 2)
+        self.HistorySpecFrame.Activate()
+
         self.serverCom=ServerCommunication() #实例化服务器连接对象
-        
+
         ########## 用于显示的  ############
-        
+
         self.show_recv_set=ShowRecvAndSet(self)
         self.byte_to_package=ByteToPackage()
 
@@ -137,13 +156,13 @@ class MainFrame ( wx.aui.AuiMDIParentFrame ):
         self.queuePoa=Queue.Queue(maxsize=20)
         self.queueTdoa=Queue.Queue(maxsize=20)
 
-        
+
         ###本地存储的队列#############
         self.queueFFTLocalSave=Queue.Queue()
         self.queueAbLocalSave=Queue.Queue()
 
         ### 画地图所使用的队列 （FFT的经纬度打包放进去）#########
-        
+
         self.queueRouteMap=Queue.Queue()
 
         ## 窗口对象，以后就不创建了 ####
@@ -156,20 +175,20 @@ class MainFrame ( wx.aui.AuiMDIParentFrame ):
         self.dlg_signal_fenxi=0
 
 
-        
-        
+
+
         ###### 创建数据表 #############
         if(not os.path.isfile( "C:\\DataBase\\PortSRF.db" )):
             os.mkdir(r'C:/DataBase/')
         CreateAllTable.create_all_table()
-        
-        
+
+
         ##### thread 管理 #########
         self.thread_recvfft=0
 
         self.thread_station=0
         self.thread_route_map=0
-        ''' 
+        '''
 
         if (configfpga.get_fx3_status()[0] == 0x04):
             pass
@@ -180,67 +199,67 @@ class MainFrame ( wx.aui.AuiMDIParentFrame ):
                           'Alert', wx.ICON_EXCLAMATION | wx.STAY_ON_TOP)
                           '''
 
-        
+
         self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
-        
+
         self.m_toolBar1 = self.CreateToolBar( wx.TB_HORIZONTAL|wx.TB_TEXT, wx.ID_ANY )
         self.m_toolBar1.SetFont(wx.Font(8, wx.ROMAN, wx.NORMAL, wx.LIGHT, underline=False, faceName=u"华文细黑 常规",
                                         encoding=wx.FONTENCODING_DEFAULT))
 
-        self.m_start_hw = self.m_toolBar1.AddLabelTool( wx.ID_ANY, u"连接硬件", wx.Bitmap( "..//icons//pci.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, u"给硬件发送的命令，开启USB连接", wx.EmptyString, None )
+        self.m_start_hw = self.m_toolBar1.AddLabelTool( wx.ID_ANY, u"连接硬件", wx.Bitmap( "..//icons//pci.jpg", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, u"给硬件发送的命令，开启USB连接", wx.EmptyString, None )
         self.m_toolBar1.AddSeparator()
-        
+
         self.m_toolBar1.AddSeparator()
         self.m_toolBar1.AddSeparator()
-        
+
         self.m_connect = self.m_toolBar1.AddLabelTool( wx.ID_ANY, u"连接服务器", wx.Bitmap( "..//icons//server_connect.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, u"连接服务器以便发送服务请求", wx.EmptyString, None )
-        
+
         self.m_toolBar1.AddSeparator()
-        
+
         self.m_toolBar1.AddSeparator()
         self.m_toolBar1.AddSeparator()
-        
+
         self.m_tool_sweep = self.m_toolBar1.AddLabelTool( wx.ID_ANY, u"扫频接收 ", wx.Bitmap( "..//icons//spectrum.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, u"设置扫频范围，扫频参数，查询工作状态", wx.EmptyString, None )
-        
+
         self.m_toolBar1.AddSeparator()
-        
+
         self.m_toolBar1.AddSeparator()
         self.m_toolBar1.AddSeparator()
-        
+
         self.m_tool_iq = self.m_toolBar1.AddLabelTool( wx.ID_ANY, u"定频接收  ", wx.Bitmap( "..//icons//link_a.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, u"开启本地定频，查询工作状态", wx.EmptyString, None )
-        
+
         self.m_toolBar1.AddSeparator()
-        
-        self.m_toolBar1.AddSeparator()
-        self.m_toolBar1.AddSeparator()
-        
-        self.m_tool_press = self.m_toolBar1.AddLabelTool( wx.ID_ANY, u"压制发射", wx.Bitmap( "..//icons//radio.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, u"启动压制命令，压制异常频点", wx.EmptyString, None )
-        
-        self.m_toolBar1.AddSeparator()
-        
-        self.m_toolBar1.AddSeparator()
-        
-        self.m_tool_map = self.m_toolBar1.AddLabelTool( wx.ID_ANY, u"地图服务", wx.Bitmap( "..//icons//maps1.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, u"进行地图相关的服务请求设置，并查看地图结果显示", wx.EmptyString, None )
-        
-        self.m_toolBar1.AddSeparator()
-        
+
         self.m_toolBar1.AddSeparator()
         self.m_toolBar1.AddSeparator()
-        
-        self.m_tool_freqplan = self.m_toolBar1.AddLabelTool( wx.ID_ANY, u"查询频率规划", wx.Bitmap( "..//icons//find.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, u"查询具体频段的国家无线电频率规划信息", wx.EmptyString, None )
-        
+
+        self.m_tool_press = self.m_toolBar1.AddLabelTool( wx.ID_ANY, u"压制发射", wx.Bitmap( "..//icons//pro24.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, u"启动压制命令，压制异常频点", wx.EmptyString, None )
+
         self.m_toolBar1.AddSeparator()
-        
+
+        self.m_toolBar1.AddSeparator()
+
+        self.m_tool_map = self.m_toolBar1.AddLabelTool( wx.ID_ANY, u"地图服务", wx.Bitmap( "..//icons//map3.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, u"进行地图相关的服务请求设置，并查看地图结果显示", wx.EmptyString, None )
+
+        self.m_toolBar1.AddSeparator()
+
         self.m_toolBar1.AddSeparator()
         self.m_toolBar1.AddSeparator()
-        
+
+        self.m_tool_freqplan = self.m_toolBar1.AddLabelTool( wx.ID_ANY, u"查询频率规划", wx.Bitmap( "..//icons//find1.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, u"查询具体频段的国家无线电频率规划信息", wx.EmptyString, None )
+
+        self.m_toolBar1.AddSeparator()
+
+        self.m_toolBar1.AddSeparator()
+        self.m_toolBar1.AddSeparator()
+
         self.m_tool_remoteCtrl = self.m_toolBar1.AddLabelTool( wx.ID_ANY, u"远程控制", wx.Bitmap( "..//icons//remote.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, u"设置指定ID的远程终端的扫频参数，定频参数，或者压制参数", wx.EmptyString, None )
-        
+
         self.m_toolBar1.AddSeparator()
-        
+
         self.m_toolBar1.AddSeparator()
         self.m_toolBar1.AddSeparator()
-        
+
         self.m_tool_replay = self.m_toolBar1.AddLabelTool( wx.ID_ANY, u"信号分析", wx.Bitmap( "..//icons//oscilloscope2.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, U"对本地数据文件或者历史数据进行信号分析", wx.EmptyString, None )
 
         self.m_toolBar1.AddSeparator()
@@ -248,13 +267,13 @@ class MainFrame ( wx.aui.AuiMDIParentFrame ):
         self.m_toolBar1.AddSeparator()
         self.m_toolBar1.AddSeparator()
 
-        self.m_tool_help= self.m_toolBar1.AddLabelTool(wx.ID_ANY,u"帮助文档", wx.Bitmap( "..//icons//help.png", wx.BITMAP_TYPE_ANY ) , wx.NullBitmap, wx.ITEM_NORMAL, u" 帮助文档，使用说明", wx.EmptyString, None)
+        self.m_tool_help= self.m_toolBar1.AddLabelTool(wx.ID_ANY,u"帮助文档", wx.Bitmap( "..//icons//help1.png", wx.BITMAP_TYPE_ANY ) , wx.NullBitmap, wx.ITEM_NORMAL, u" 帮助文档，使用说明", wx.EmptyString, None)
 
         self.m_toolBar1.Realize()
-        
-        
+
+
         self.Centre( wx.BOTH )
-        
+
         # Connect Events
         self.Bind(wx.EVT_CLOSE,self.OnDoClose)
         self.Bind( wx.EVT_TOOL, self.m_start_hwOnToolClicked, id = self.m_start_hw.GetId() )
@@ -269,8 +288,8 @@ class MainFrame ( wx.aui.AuiMDIParentFrame ):
         self.Bind(wx.EVT_TOOL, self.m_tool_helpOnToolClicked, id=self.m_tool_help.GetId())
     def __del__( self ):
         pass
-    
-    
+
+
     # Virtual event handlers, overide them in your derived class
 
     def hello(self):
@@ -283,7 +302,7 @@ class MainFrame ( wx.aui.AuiMDIParentFrame ):
             raise Exception('Conection ##### Stop')
             staticVar.sock=0
             staticVar.sockFile=0
-            
+
             self.thread_station.input1=[]
 
             while (1):
@@ -305,8 +324,8 @@ class MainFrame ( wx.aui.AuiMDIParentFrame ):
                     wx.MessageBox('Connect To File Server Failure!',
                                   'Alert', wx.ICON_INFORMATION | wx.STAY_ON_TOP)
                 time.sleep(5)
-                
-                
+
+
 
         self.timer = threading.Timer(15, self.hello, [])
         self.timer.start()
@@ -328,10 +347,10 @@ class MainFrame ( wx.aui.AuiMDIParentFrame ):
                     wx.MessageBox('Connect To File Server Failure!\n' +
                                   str(ErrorValue[0]) + ' ' + str(ErrorValue[1]),
                                   'Alert', wx.ICON_INFORMATION | wx.STAY_ON_TOP)
-                    
-             
-    
-                    
+
+
+
+
             if(staticVar.sockFile==0 and flag_sockFile==0):
                 try:
                     self.serverCom.ConnectToServerFile(ip2,port2)
@@ -340,7 +359,7 @@ class MainFrame ( wx.aui.AuiMDIParentFrame ):
                 except Exception:
                     (ErrorType, ErrorValue, ErrorTB) = sys.exc_info()
                     wx.MessageBox('Connect To File Server Failure!\n'+
-                                  str(ErrorValue[0])+' '+str(ErrorValue[1]),  
+                                  str(ErrorValue[0])+' '+str(ErrorValue[1]),
                                'Alert', wx.ICON_INFORMATION | wx.STAY_ON_TOP)
 
             if(flag_sock and flag_sockFile):
@@ -350,17 +369,17 @@ class MainFrame ( wx.aui.AuiMDIParentFrame ):
                 time.sleep(5)
 
 
-        
+
         connect=ConnectServer()
-        
+
         connect.CommonHeader=FrameHeader(0x55,0xA1,staticVar.getid()&0x00FF,staticVar.getid()>>8)
         connect.CommonTail=self.tail
-        
+
         if(self.GPS_list[0]==0 and self.GPS_list[1]==0 and self.GPS_list[2]==0):
-            #临时加的测试 
+            #临时加的测试
             self.GPS_list=[0]*9
             #############################
-            
+
             Lon=114.4202
             Lat=30.5100
             Alti=35
@@ -370,8 +389,8 @@ class MainFrame ( wx.aui.AuiMDIParentFrame ):
             Lon_fen_f=int((Lon_fen-int(Lon_fen))*1000)
             Lat_fen_I=int(Lat_fen)
             Lat_fen_f=int((Lat_fen-int(Lat_fen))*1000)
-            
-        
+
+
             self.GPS_list[1]=114
             self.GPS_list[2]=(Lon_fen_I<<2)+(Lon_fen_f>>8)
             self.GPS_list[3]=Lon_fen_f&0x00FF
@@ -379,14 +398,14 @@ class MainFrame ( wx.aui.AuiMDIParentFrame ):
             self.GPS_list[5]=(Lat_fen_I<<2)+(Lat_fen_f>>8)
             self.GPS_list[6]=Lat_fen_f&0x00FF
             self.GPS_list[8]=35
-            
+
         list =self.GPS_list
-        
+
         connect.LonLatAlti=LonLatAltitude(list[0],list[1],list[2],list[3],list[4]>>7,list[4]&0x7F,
                                           list[5],list[6],list[7]>>7,list[7]&0x7F,list[8])
         self.serverCom.SendQueryData(connect)
-        
-      
+
+
         self.thread_station=ReceiveServerData(self)
         self.thread_station.setDaemon(True)
         self.thread_station.start()
@@ -421,21 +440,24 @@ class MainFrame ( wx.aui.AuiMDIParentFrame ):
         ''' send query '''
         self.QuerySend(0x1C)
         self.GPS_list = self.byte_to_package.ReceiveRecv()
+        if(self.GPS_list):
+            obj = self.byte_to_package.ByteToWorkMode(self.GPS_list)
+            self.show_recv_set.ShowIsConnect(obj)
 
-        obj = self.byte_to_package.ByteToWorkMode(self.GPS_list)
-        self.show_recv_set.ShowIsConnect(obj)
+            list_p=[]
+            for i in range(6,15):
+                list_p.append(self.GPS_list[i])
 
-        list_p=[]
-        for i in range(6,15):
-            list_p.append(self.GPS_list[i])
+            self.GPS_list=list_p
 
-        self.GPS_list=list_p
+        else:
+            self.GPS_list=[0]*9
 
 
-        self.thread_recvfft=ReceiveFFTThread(self) 
+        self.thread_recvfft=ReceiveFFTThread(self)
         self.thread_recvfft.setDaemon(True)
-        self.thread_recvfft.start()        
-    
+        self.thread_recvfft.start()
+
     def m_connectOnToolClicked( self, event ):
         if(self.dlg_connect==0):
             self.dlg_connect=input_ip.MyDialog1(self)
@@ -456,50 +478,50 @@ class MainFrame ( wx.aui.AuiMDIParentFrame ):
 
         Thread(target=self.ConnectCore,args=(ip_moni,port_moni,ip_file,port_file)).start()
         event.Skip()
-        
-        
-    
+
+
+
     def m_tool_sweepOnToolClicked( self, event ):
         if(self.dlg_sweep==0):
             self.dlg_sweep=dialog_sweep(self)
         self.dlg_sweep.ShowModal()
         event.Skip()
-    
+
     def m_tool_iqOnToolClicked( self, event ):
         if(self.dlg_iq==0):
             self.dlg_iq=dialog_IQ(self)
         self.dlg_iq.ShowModal()
         event.Skip()
-    
+
     def m_tool_pressOnToolClicked( self, event ):
         if(self.dlg_press==0):
             self.dlg_press=dialog_press(self)
         self.dlg_press.ShowModal()
-        
+
         event.Skip()
-    
+
     def m_tool_mapOnToolClicked( self, event ):
         if(self.dlg_map==0):
             self.dlg_map=dialog_map(self)
         self.dlg_map.ShowModal()
         event.Skip()
-    
+
     def m_tool_freqplanOnToolClicked( self, event ):
         dlg=QueryFreqPlanDialog()
         dlg.ShowModal()
         event.Skip()
-    
+
     def m_tool_remoteCtrlOnToolClicked( self, event ):
         dlg=dialog_remoteCtrl(self)
         dlg.ShowModal()
         event.Skip()
-    
+
     def m_tool_replayOnToolClicked( self, event ):
         if(self.dlg_signal_fenxi==0):
-            self.dlg_signal_fenxi=SignalAnalysisDlg()
+            self.dlg_signal_fenxi=SignalAnalysisDlg(self)
         self.dlg_signal_fenxi.ShowModal()
         event.Skip()
-    
+
 #     def OnNewChild(self, evt):
 #         self.count += 1
 #         child = ChildFrame(self, self.count)
@@ -508,7 +530,7 @@ class MainFrame ( wx.aui.AuiMDIParentFrame ):
     def m_tool_helpOnToolClicked(self,event):
 
 
-        url = 'file:///G:/wangziwei/Spec_for_new_transfer/help.html'
+        url = 'file:///C:/Spec_for_new_transfer/help.html'
         webbrowser.open(url)
 
 
@@ -519,16 +541,16 @@ class MainFrame ( wx.aui.AuiMDIParentFrame ):
         dirname, filename = os.path.split(os.path.abspath(sys.argv[0]))
         os.chdir(dirname)
 #         os.chdir("./apache-tomcat-7.0.68//bin//")
-        os.chdir("../apache-tomcat-7.0.68//bin//")
-        
+#         os.chdir("./apache-tomcat-7.0.68//bin//")
+
         os.system("shutdown.bat")
         if(not self.thread_route_map==0):
             if(self.thread_route_map.event.isSet()):
                 self.thread_route_map.stop()
-                
+
         if(not self.thread_route_map==0):
             self.thread_route_map.conn.close()
-        
+
         '''
         flag1=0
         flag2=0
@@ -569,7 +591,7 @@ class MainFrame ( wx.aui.AuiMDIParentFrame ):
                     k.Close()
         # self.Close()
         sys.exit(0)
-        
+
 
 
 app=wx.App()

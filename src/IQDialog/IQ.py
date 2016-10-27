@@ -98,7 +98,7 @@ class dialog_IQ ( wx.Dialog ):
         self.m_staticText11.Wrap( -1 )
         gSizer2.Add( self.m_staticText11, 0, wx.ALL, 5 )
 
-        m_choice_bwChoices = [ u"5", u"2.5", u"1", u"0.5", u"0.1" ]
+        m_choice_bwChoices = [ u"5", u"2.5", u"1.25", u"0.625", u"0.125" ]
         self.m_choice_bw = wx.Choice( self.m_panel1, wx.ID_ANY, wx.DefaultPosition, wx.Size( 110,-1 ), m_choice_bwChoices, 0 )
         self.m_choice_bw.SetSelection( 0 )
         gSizer2.Add( self.m_choice_bw, 0, wx.ALL, 5 )

@@ -83,9 +83,9 @@ class ShowRecvAndSet():
             SweepRecvMode=u"多频段"
 
         begin = 70 + (recvQueryData.StartSectionNo - 1) * 25 + \
-                ((recvQueryData.HighStartFreq << 2) + (recvQueryData.LowStartFreq)) * 25.0 / 1024
+                ((recvQueryData.HighStartFreq << 8) + (recvQueryData.LowStartFreq)) * 25.0 / 1024
         end = 70 + (recvQueryData.EndSectionNo - 1) * 25 + \
-              ((recvQueryData.HighEndFreq << 2) + (recvQueryData.LowEndFreq)) * 25.0 / 1024
+              ((recvQueryData.HighEndFreq << 8) + (recvQueryData.LowEndFreq)) * 25.0 / 1024
 
 
         list_p=[(u"扫频模式",SweepRecvMode),

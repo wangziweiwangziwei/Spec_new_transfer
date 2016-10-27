@@ -12,6 +12,7 @@
 ###########################################################################
 
 from src.SweepDialog.sweepfreq import dialog_freqblock
+from sweep_yewu import dialog_freqyewu
 import wx
 import wx.xrc
 import time 
@@ -22,7 +23,10 @@ from src.Spectrum import Spectrum_1
 from src.Water.WaterFall import Water
 
 from src.CommonUse.staticFileUpMode import staticFileUp
+from src.Toji.tongji import Toji
+from src.SweepDialog.setblock_check import SetblockDlg
 
+from  src.Package.logg import Log
 
 class dialog_sweep ( wx.Dialog ):
 
@@ -79,7 +83,7 @@ class dialog_sweep ( wx.Dialog ):
         self.m_staticText6.Wrap( -1 )
         gSizer3.Add( self.m_staticText6, 0, wx.ALL, 5 )
         
-        m_sweep_modeChoices = [ u"全频段", u"指定频段" ]
+        m_sweep_modeChoices = [ u"全频段", u"用户自定义频段",u"标准业务频段" ]
         self.m_sweep_mode = wx.ComboBox( self.p_sweep_set, wx.ID_ANY, u"全频段", wx.DefaultPosition, wx.DefaultSize, m_sweep_modeChoices, 0 )
         self.m_sweep_mode.SetSelection( 0 )
         gSizer3.Add( self.m_sweep_mode, 0, wx.ALL, 5 )
@@ -162,11 +166,13 @@ class dialog_sweep ( wx.Dialog ):
         self.m_combo_adapt.SetSelection( 2 )
         gSizer4.Add( self.m_combo_adapt, 0, wx.ALL, 5 )
         
-        self.m_check_fix = wx.CheckBox( self.p_sweep_param, wx.ID_ANY, u"  固定门限（dB）", wx.DefaultPosition, wx.DefaultSize, 0 )
-        gSizer4.Add( self.m_check_fix, 0, wx.ALL, 5 )
-        
-        self.m_text_fix = wx.TextCtrl( self.p_sweep_param, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-        gSizer4.Add( self.m_text_fix, 0, wx.ALL, 5 )
+        self.m_check_block = wx.CheckBox( self.p_sweep_param, wx.ID_ANY, u"  模板检测", wx.DefaultPosition, wx.DefaultSize, 0 )
+        gSizer4.Add( self.m_check_block, 0, wx.ALL, 5 )
+
+        self.m_btn_block = wx.Button(self.p_sweep_param, wx.ID_ANY , u"设置模板检测值" , wx.DefaultPosition , wx.DefaultSize, 0)
+        gSizer4.Add( self.m_btn_block, 0, wx.ALL, 5 )        
+        # self.m_text_fix = wx.TextCtrl( self.p_sweep_param, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+        # gSizer4.Add( self.m_text_fix, 0, wx.ALL, 5 )
         
 
         self.m_button_paramSet = wx.Button( self.p_sweep_param, wx.ID_ANY, u"确定", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -181,26 +187,38 @@ class dialog_sweep ( wx.Dialog ):
         gSizer4.Fit( self.p_sweep_param )
         self.m_notebook3.AddPage( self.p_sweep_param, u"参数设置", True )
         self.p_sweep_display = wx.Panel( self.m_notebook3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-        gSizer41 = wx.GridSizer( 6, 1, 0, 0 )
+        gSizer41 = wx.GridSizer(7, 1, 0, 0 )
         
-        
-        gSizer41.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
+        img_waterfall = wx.Image('.//icons//waterfull.png',wx.BITMAP_TYPE_ANY)
+        bmp_waterfall = wx.StaticBitmap(self.p_sweep_display,-1,wx.BitmapFromImage(img_waterfall))
+
+        img_list = wx.Image('.//icons//list.png',wx.BITMAP_TYPE_ANY)
+        bmp_list = wx.StaticBitmap(self.p_sweep_display,-1,wx.BitmapFromImage(img_list))
+
+        img_stat = wx.Image('.//icons//statistics.png',wx.BITMAP_TYPE_ANY)
+        bmp_stat = wx.StaticBitmap(self.p_sweep_display,-1,wx.BitmapFromImage(img_stat))
+
+
+
         
         # self.check_spec = wx.CheckBox( self.p_sweep_display, wx.ID_ANY, u"   功率谱图", wx.DefaultPosition, wx.DefaultSize, 0 )
         # gSizer41.Add( self.check_spec, 0, wx.ALL, 5 )
         
-        self.check_water = wx.CheckBox( self.p_sweep_display, wx.ID_ANY, u"   瀑布图", wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.check_water = wx.CheckBox( self.p_sweep_display, wx.ID_ANY, u" 瀑布图", wx.DefaultPosition, wx.DefaultSize, 0 )
+        gSizer41.Add(bmp_waterfall, 0,  wx.LEFT,30)
         gSizer41.Add( self.check_water, 0, wx.ALL, 5 )
 
-        self.toji = wx.CheckBox(self.p_sweep_display, wx.ID_ANY, u"   统计结果显示", wx.DefaultPosition, wx.DefaultSize,
+        self.toji = wx.CheckBox(self.p_sweep_display, wx.ID_ANY, u" 统计结果显示", wx.DefaultPosition, wx.DefaultSize,
                                        0)
+        gSizer41.Add(bmp_stat, 0, wx.LEFT, 30)
         gSizer41.Add(self.toji, 0, wx.ALL, 5)
 
-        self.list = wx.CheckBox(self.p_sweep_display, wx.ID_ANY, u"   列表显示", wx.DefaultPosition, wx.DefaultSize,
-                                       0)
+        self.list = wx.CheckBox(self.p_sweep_display, wx.ID_ANY, u" 列表显示", wx.DefaultPosition, wx.DefaultSize,
+                                      0)
+        gSizer41.Add(bmp_list, 0, wx.LEFT, 30)
         gSizer41.Add(self.list, 0, wx.ALL, 5)
 
-        
+
         self.btn_display = wx.Button( self.p_sweep_display, wx.ID_ANY, u"确定", wx.DefaultPosition, wx.DefaultSize, 0 )
         gSizer41.Add( self.btn_display, 0, wx.ALL, 5 )
         
@@ -243,6 +261,7 @@ class dialog_sweep ( wx.Dialog ):
         self.m_upload_mode.Bind( wx.EVT_COMBOBOX, self.m_upload_modeOnCombobox )
         self.btn_set.Bind( wx.EVT_BUTTON, self.btn_setOnButtonClick )
         self.btn_cancel.Bind( wx.EVT_BUTTON, self.btn_cancelOnButtonClick )
+        self.m_btn_block.Bind( wx.EVT_BUTTON, self.btn_setBlockThres)
         self.m_button_paramSet.Bind( wx.EVT_BUTTON, self.m_button_paramSetOnButtonClick )
         self.m_button_cancel.Bind( wx.EVT_BUTTON, self.m_button_cancelOnButtonClick )
         self.btn_display.Bind( wx.EVT_BUTTON, self.btn_displayOnButtonClick )
@@ -255,23 +274,33 @@ class dialog_sweep ( wx.Dialog ):
  
     # Virtual event handlers, overide them in your derived class
     def m_sweep_modeOnCombobox( self, event ):
-        if self.m_sweep_mode.GetSelection()==1:
-            dlg=dialog_freqblock(None)
-            dlg.isValid=0
-            dlg.ShowModal()
-          
-            if(dlg.isValid):
-                self.freq_s=int(dlg.text_freq_start.GetValue())
-                self.freq_e=int(dlg.text_freq_end.GetValue())
-                # print self.freq_s
-                # print self.freq_e
-
-
-
-        
+        if self.m_sweep_mode.GetSelection()==0:
+            self.freq_s = 70
+            self.freq_e = 5995
         else:
-            self.freq_s=70
-            self.freq_e=5995
+            try:
+
+
+                if self.m_sweep_mode.GetSelection()==1:
+                    dlg=dialog_freqblock(None)
+                    dlg.isValid=0
+                    dlg.ShowModal()
+                    if(dlg.isValid):
+                        self.freq_s=int(dlg.text_freq_start.GetValue())
+                        self.freq_e=int(dlg.text_freq_end.GetValue())
+                        # print self.freq_s
+                        # print self.freq_e
+                else:
+                    dlg=dialog_freqyewu(None)
+                    dlg.isValid = 0
+                    dlg.ShowModal()
+                    if (dlg.isValid):
+                        self.freq_s = int(dlg.start_freq)
+                        self.freq_e = int(dlg.end_freq )
+                        # print self.freq_s
+                        # print self.freq_e
+            except Exception,e:
+                pass
 
         self.text_freq_range.SetLabel(str(self.freq_s) + '-' + str(self.freq_e))
                    
@@ -282,6 +311,8 @@ class dialog_sweep ( wx.Dialog ):
         if(index==0):
             self.m_change_thred.Enable(False)
             self.m_extract_M.Enable(False)
+            self.upload_mode=0   #
+
         elif(index==1):
             self.m_change_thred.Enable(True)
             self.m_extract_M.Enable(False)
@@ -298,7 +329,10 @@ class dialog_sweep ( wx.Dialog ):
     def btn_setOnButtonClick( self, event ):
         print self.freq_s
         print self.freq_e
-         
+
+        if(self.freq_s<70 or self.freq_e>6000):
+            return
+
         ###################
               
         if(self.upload_mode==1):
@@ -343,13 +377,15 @@ class dialog_sweep ( wx.Dialog ):
             self.setTickLable(array)
        
         self.outPoint.write(bytearray(sweepRangeSet))
-        
+
         ######## show ##################
         self.show_recv_set.ShowSweepRange(sweepRangeSet)
-        
+
       
     def setTick70_5995(self):
-        self.parent.SpecFrame.panelFigure.setSpLabel(begin_X=self.freq_s, end_X=self.freq_e)
+        self.parent.SpecFrame.panelFigure.setSpLabel(begin_X=self.freq_s, end_X=self.freq_e,
+                                                     begin_Y=self.parent.SpecFrame.panelFigure.FFT_Min_Y,
+                                                     end_Y=self.parent.SpecFrame.panelFigure.FFT_Max_Y)
 
         self.parent.FreqMin=self.freq_s
         self.parent.FreqMax=self.freq_e
@@ -363,6 +399,9 @@ class dialog_sweep ( wx.Dialog ):
         self.parent.SpecFrame.panelFigure.lineSpec.set_xdata(xx)
         self.parent.SpecFrame.panelFigure.lineSpecBack.set_xdata(xx)
 
+        if(self.parent.thread_recvfft):
+            self.parent.thread_recvfft.xx =xx
+
         if (isinstance(self.parent.WaterFrame, Water)):
             self.parent.WaterFrame.setWfLabel(self.freq_s, self.freq_e)
 
@@ -371,10 +410,9 @@ class dialog_sweep ( wx.Dialog ):
         begin=(array[0]-1)*25+70
         end = array[1]*25+70
 
-
-
-
-        self.parent.SpecFrame.panelFigure.setSpLabel(begin_X=self.freq_s, end_X=self.freq_e)
+        self.parent.SpecFrame.panelFigure.setSpLabel(begin_X=self.freq_s, end_X=self.freq_e,
+                begin_Y=self.parent.SpecFrame.panelFigure.FFT_Min_Y,
+                end_Y=self.parent.SpecFrame.panelFigure.FFT_Max_Y)
         
         self.parent.FreqMin=self.freq_s
         self.parent.FreqMax=self.freq_e
@@ -386,7 +424,24 @@ class dialog_sweep ( wx.Dialog ):
 
         totalNum=array[1]-array[0]+1
 
-        if(totalNum>=40):
+        
+        rbw_flg = (self.freq_e-self.freq_s)/25 + 1
+
+        if rbw_flg <= 40 :
+            self.parent.SpecFrame.panelFigure.rbw.SetLabel('RBW:24k')
+            self.parent.SpecFrame.panelFigure.vbw.SetLabel('VBW:' + str(rbw_flg * 24) + 'k') 
+            print 'VBW:' + str(rbw_flg * 24) + 'k'
+        else :
+            if (rbw_flg % 32 == 0 ):
+                rbw_flg = rbw_flg / 32
+            else :
+                rbw_flg = rbw_flg / 32 + 1
+            self.parent.SpecFrame.panelFigure.rbw.SetLabel('RBW:781k')
+            self.parent.SpecFrame.panelFigure.vbw.SetLabel('VBW:' + str(rbw_flg * 781) + 'k')
+            print 'VBW:' + str(rbw_flg * 781) + 'k'
+         
+
+        if(totalNum>40):
             if(totalNum%32==0):
                 totalNum=totalNum/32
             else:
@@ -399,7 +454,9 @@ class dialog_sweep ( wx.Dialog ):
         xx = linspace(begin, end, 1024)
         self.parent.SpecFrame.panelFigure.lineSpec.set_xdata(xx)
         self.parent.SpecFrame.panelFigure.lineSpecBack.set_xdata(xx)
-         
+        if(self.parent.thread_recvfft):
+            self.parent.thread_recvfft.xx =xx
+
         if(isinstance(self.parent.WaterFrame,Water)):
             self.parent.WaterFrame.setWfLabel(begin,end)
 
@@ -413,6 +470,7 @@ class dialog_sweep ( wx.Dialog ):
         sweepRangeSet.HighEndFreq=array[4]
         sweepRangeSet.LowEndFreq=array[5]
         return sweepRangeSet
+
     def SweepSection(self,freqStart,freqEnd):
         startK=(freqStart-70)/25
         endK=(freqEnd-70)/25
@@ -432,6 +490,12 @@ class dialog_sweep ( wx.Dialog ):
    
     def btn_cancelOnButtonClick( self, event ):
         event.Skip()
+
+    def btn_setBlockThres(self , event):
+        dlg = SetblockDlg(self)
+        dlg.ShowModal()
+        self.blk_array = dlg.blk_arr
+        print self.blk_array
     
     def m_button_paramSetOnButtonClick( self, event ):
         if(self.m_check_recvgain.GetValue()):
@@ -445,7 +509,7 @@ class dialog_sweep ( wx.Dialog ):
             
         if(self.m_check_adapt.GetValue()):
         
-            thresSet=ThresSet()
+            thresSet=BlockThresSet()
             thresSet.AdaptThres=self.dictThres[int(self.m_combo_adapt.GetValue())]
             thresSet.CommonHeader=FrameHeader(0x55,0x06,self.lowid,self.highid)
             thresSet.ThresMode=0            
@@ -453,15 +517,25 @@ class dialog_sweep ( wx.Dialog ):
             self.outPoint.write(bytearray(thresSet))
             
         
-        elif(self.m_check_fix.GetValue()):
-            thresSet=ThresSet()
+        elif(self.m_check_block.GetValue()):
+            thresSet=BlockThresSet()
             thresSet.CommonHeader=FrameHeader(0x55,0x06,self.lowid,self.highid)
             thresSet.ThresMode=1         
             thresSet.CommonTail=self.tail
             
-            thres=int(self.m_text_fix.GetValue())
-            thresSet.HighFixedThres=thres>>8
-            thresSet.LowFixedThres=thres& 0x00FF    
+            for i in range(len(self.blk_array)):
+                blk_arr = self.BlkToByte(self.blk_array[i])
+                thresSet.BlockFreqArray[i] = BlockFreq(blk_arr[0],blk_arr[1],blk_arr[2],blk_arr[3],blk_arr[4],blk_arr[5],blk_arr[6])
+
+            
+            
+#             thres=int(self.m_text_fix.GetValue())
+#             thresSet.HighFixedThres=thres >> 8
+#             thresSet.LowFixedThres=thres & 0x00FF
+
+            for i in bytearray(thresSet):
+                print i,
+                
             self.outPoint.write(bytearray(thresSet))
             
         if(self.m_check_channelgain.GetValue()):
@@ -471,6 +545,34 @@ class dialog_sweep ( wx.Dialog ):
             self.SetCorrGain(0xC2)
         
         event.Skip()
+
+    def BlkToByte(self,blk_arr_1):
+        freq = blk_arr_1[0]
+        if freq == 0 :
+            freqNo = 0
+            sixBit0 = 0
+            highOffset = 0
+            lowOffset = 0
+            fourBit0 = 0
+            highThres = 0
+            lowThres = 0
+
+        else :
+            if blk_arr_1[1] < 0:
+                spec = 2 ** 12 - abs(int(blk_arr_1[1] * 8))
+            else :
+                spec = (int(blk_arr_1[1] * 8))
+            freqNo = (freq - 70) / 25 + 1
+            fq_ofst = (freq - (freqNo - 1) * 25 - 70)*1024/25
+            sixBit0 = 0
+            highOffset = fq_ofst >> 8
+            lowOffset =  fq_ofst & 0x0FF
+            fourBit0 = 0
+            highThres = (spec & 0xF00) >> 8
+            lowThres = spec & 0xFF
+
+        return (freqNo,sixBit0,highOffset,lowOffset,fourBit0,highThres,lowThres)
+
     
     def SetCorrGain(self,func):
         if(staticVar.getSock()==0):
@@ -502,7 +604,11 @@ class dialog_sweep ( wx.Dialog ):
                 self.parent.WaterFrame.Activate()
                 self.parent.WaterFrame.setWfLabel(self.parent.FreqMin,self.parent.FreqMax)
                 
-        
+        if(self.toji.GetValue()):
+            if(self.parent.TojiFrame==None):
+                self.parent.TojiFrame=Toji(self.parent)
+                self.parent.TojiFrame.Activate()
+
         self.Close()
         event.Skip()
     def m_radioBox1OnRadioBox( self, event ):
@@ -542,16 +648,18 @@ class dialog_sweep ( wx.Dialog ):
             self.QuerySend(0x1D)
             
             li=self.byte_to_package.ReceiveRecv()
-            obj=self.byte_to_package.ByteToCorrGain(li)
-            self.show_recv_set.ShowCorrGain(obj)
+            if((li) and (len(li)==260)):
+                obj=self.byte_to_package.ByteToCorrGain(li)
+                self.show_recv_set.ShowCorrGain(obj)
             
         else:
             self.QuerySend(0x1E)
             
             li=self.byte_to_package.ReceiveRecv()
-            obj=self.byte_to_package.ByteToAntGain(li)
-            self.show_recv_set.ShowAntGain(obj)
-            
+            if ((li) and (len(li) == 260)):
+                obj=self.byte_to_package.ByteToAntGain(li)
+                self.show_recv_set.ShowAntGain(obj)
+
             
         event.Skip()
     

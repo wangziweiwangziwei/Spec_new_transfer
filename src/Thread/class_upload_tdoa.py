@@ -5,77 +5,91 @@
 from src.Package.package import *
 import struct
 import time
-
+import os
 from src.CommonUse.staticVar import staticVar
-
+import cPickle as pickle
+import socket
+from src.Package.logg import Log
 class SendTdoaFile():
-    def __init__(self,mainframe):
-        self.queueTdoa = mainframe.queueTdoa
+    def __init__(self):
 
-        self.countTdoa=0
+        self.FILE_PATH=os.getcwd()+"\\LocalData\\Tdoa\\"
+        self.indexOfNameList=0
+        self.nameListTdoa=[]
+
+
+
+
+
 
     def upload_tdoa(self):
-        if(not self.queueTdoa.empty()):
-            self.IQList = []
-            recvIQList = self.queueTdoa.get()
-            for recvIQ in recvIQList:
-                block = IQBlock(recvIQ.CurBlockNo, recvIQ.IQDataAmp)
-                self.IQList.append(block)
+        if(self.nameListTdoa==[]):
+            self.nameListTdoa=os.listdir(self.FILE_PATH)
 
-            head = IQUploadHeader(0x00, recvIQ.LonLatAlti, recvIQ.Param)
+            if(len(self.nameListTdoa)>=500):
+                self.upload()
+            else:
+                self.nameListTdoa=[]
 
-            #####组合tdoa 文件################
 
-            count = (recvIQList[0].SecondCount[0] << 24) + \
-                    (recvIQList[0].SecondCount[1] << 16) + \
-                    (recvIQList[0].SecondCount[2] << 8) + \
-                    (recvIQList[0].SecondCount[3])
+        else:
+            self.upload()
 
-            Time = recvIQ.Time
+    def upload(self):
+        #数到了最后
 
-            Year = (Time.HighYear << 4) + Time.LowYear
-            Month = Time.Month
-            Day = Time.Day
-            Hour = (Time.HighHour << 2) + Time.LowHour + 8
-            Minute = Time.Minute
-            Second = Time.Second
-            ID = staticVar.getid()
-            
-            if (not Year == 2016):
-                curTime = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
-                Year = int(curTime[0:4])
-                Month = int(curTime[4:6])
-                Day = int(curTime[6:8])
-                Hour = int(curTime[8:10])
-                Minute = int(curTime[10:12])
-                Second = int(curTime[12:14])
-                
+        if(self.indexOfNameList==len(self.nameListTdoa)):
+            self.indexOfNameList=0
+            self.nameListTdoa=[]
 
-            fileName = str(Year) + "-" + str(Month) + "-" + str(Day) + \
-                       "-" + str(Hour) + "-" + str(Minute) + \
-                       "-" + str(Second) + '-' + str(count) + '-' + str(ID) + '-' + \
-                       '.tdoa'
 
-            print fileName
+        else:
+            # 传输文件
 
-            fileNameLen = len(fileName)
-            fileContentLen = sizeof(head) + sizeof(block) * len(self.IQList) + 1
+            fileName=self.nameListTdoa[self.indexOfNameList]
+            self.indexOfNameList+=1
+            if(os.path.isfile(self.FILE_PATH+fileName)):
+                fid = open(".\LocalData\\Tdoa\\" + fileName, 'rb')
+                d=pickle.load(fid)
+                fid.close()
 
-            print fileName
-            ###########SendToServer###################(H :2字节  Q:8 字节)
+                head=d['head']
+                block=d['block']
 
-            sockFile=staticVar.getSockFile()
-            str1 = struct.pack("!2BHQ", 0x00, 0xFF, fileNameLen, fileContentLen)
-            sockFile.sendall(str1 + fileName)
+                fileNameLen = len(fileName)
+                fileContentLen = sizeof(head) + sizeof(block) + 1
 
-            sockFile.sendall(bytearray(head))
-            for block in self.IQList:
-                sockFile.sendall(bytearray(block))
-            sockFile.sendall(struct.pack("!B", 0x00))
-            del self.IQList
 
-            self.countTdoa+=1
-            print 'self.countTdoa',self.countTdoa
+
+
+                ###########SendToServer###################(H :2字节  Q:8 字节)
+                if(not staticVar.getSockFile()==0):
+                    try:
+                        sockFile = staticVar.getSockFile()
+                        str1 = struct.pack("!2BHQ", 0x00, 0xFF, fileNameLen, fileContentLen)
+                        sockFile.sendall(str1 + fileName)
+
+                        sockFile.sendall(bytearray(head))
+
+                        sockFile.sendall(bytearray(block))
+                        sockFile.sendall(struct.pack("!B", 0x00))
+
+                        print fileName
+                        os.remove(self.FILE_PATH + fileName)
+                        Log.getLogger().debug("send_tdoa_file_ok:%s"% fileName)
+                    except socket.error, e:
+                        Log.getLogger().debug(" socket_error_found_in_send_tdoa_file: %s" % e)
+                        Log.getLogger().debug(" Cur socket sockFile=: %s" % staticVar.sockFile)
+
+                        print 'socket error occur in send tdoa ', e
+                        staticVar.sockFile = 0
+
+
+
+
+
+
+
 
 
 

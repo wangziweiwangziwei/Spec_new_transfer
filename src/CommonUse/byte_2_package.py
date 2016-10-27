@@ -117,9 +117,17 @@ class ByteToPackage():
         return abObj
     
     def ReceiveRecv(self):
-        li=list(self.inPointRecv.read(200,100))
-        if(not len(li)==56):
-            return 0
+        li=0
+        try:
+            li=list(self.inPointRecv.read(260,100))
+            if(not len(li)==56):
+                if(len(li)==260):
+                    return li
+
+                return 0
+        except Exception,e:
+            print e
+            pass
         '''
         if(li[1]==0x21):
             obj=self.ByteToSweepRange(li)
@@ -155,6 +163,7 @@ class ByteToPackage():
         '''
         return li
     def ByteToCorrGain(self,li):
+
         obj=GainTable()
         obj.AntType[0]=li[4]
         obj.AntType[1]=li[5]
@@ -317,9 +326,11 @@ class ByteToPackage():
     def ReceiveTdoa(self):
         li = list(self.inPointIQ.read(7000, 100))
         if (not len(li) == 6032):
+            
             return 0
-
-        print "tdoa-------%d" % (len(li))
+        #print li[18],li[19],li[20],li[21]
+       
+        #print "tdoa-------%d" % (len(li))
         obj = TdoaData()
         obj.CommonHeader = FrameHeader(li[0], li[1], li[2], li[3])
         obj.LonLatAlti = LonLatAltitude(li[4], li[5], li[6], li[7], li[8] >> 7, \

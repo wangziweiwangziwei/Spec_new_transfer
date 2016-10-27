@@ -77,6 +77,16 @@ class LonLatAltitude(BigEndianStructure):
     ]
 
 
+class BlockFreq(BigEndianStructure):
+    _fields_ = [("FreqNo",c_uint8),
+                ("SixBit0",c_uint8,6),
+                ("HighOffset",c_uint8,2),
+                ("LowOffset",c_uint8),
+                ("FourBit0",c_uint8,4),
+                ("HighThres",c_uint8,4),
+                ("LowThres",c_uint8)
+                ]
+
 class GainTable(BigEndianStructure):
     _fields_=[("CommonHeader",FrameHeader),
               ("AntType",c_int8*2),
@@ -178,6 +188,14 @@ class ThresSet(BigEndianStructure):
               ("ByteZero4",c_uint8),
               ("ByteZero5",c_uint8),
               ("ByteZero6",c_uint8),
+              ("CommonTail",FrameTail)
+    ]
+
+class BlockThresSet(BigEndianStructure):
+    _fields_=[("CommonHeader",FrameHeader),
+              ("ThresMode",c_uint8),
+              ("AdaptThres",c_uint8),
+              ("BlockFreqArray",BlockFreq*50),
               ("CommonTail",FrameTail)
     ]
 

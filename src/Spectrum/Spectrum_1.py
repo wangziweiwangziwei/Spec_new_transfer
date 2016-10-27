@@ -12,8 +12,10 @@ from src.SweepDialog.download_choice import dialog_download
 from src.Thread import thread_localsave
 
 class Spec(wx.aui.AuiMDIChildFrame):
-    def __init__(self,parent):
-        wx.aui.AuiMDIChildFrame.__init__(self,parent,-1,u"功率谱图                ")    
+    def __init__(self,parent,title):
+        if(title==1): name=u"功率谱图                "
+        else: name=u"信号分析功率谱图       "
+        wx.aui.AuiMDIChildFrame.__init__(self,parent,-1,name)
  
         topSplitter = wx.SplitterWindow(self)
         hSplitter = wx.SplitterWindow(topSplitter)
@@ -118,9 +120,20 @@ class PanelSpec(wx.Panel):
 
         self.Upload=wx.Button(self,-1,label=u"手动上传")
         self.Download=wx.Button(self,-1,label=u"本地存储")
+#         self.str_rbw = 'RBW:__'
+#         self.str_vbw = 'VBW:__'
+
+        
+        self.rbw = wx.StaticText(self,-1,'RBW:_____')
+        self.vbw = wx.StaticText(self,-1,'VBW:_____')
+
+        self.show_txt = wx.StaticText(self, -1, u'显示模式：')
+        self.showList = [u"实时功率谱",u"最大保持",u"最小保持",u"迹线平均"]
+        self.show_box = wx.ComboBox(self,-1,u"实时功率谱",choices=self.showList,style=wx.CB_DROPDOWN)
         
         ###################################test sizer##############################
-        
+        font = wx.Font(14, wx.SWISS, wx.NORMAL, wx.BOLD)
+
         self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
         
         bSizer4 = wx.BoxSizer( wx.VERTICAL )
@@ -131,8 +144,8 @@ class PanelSpec(wx.Panel):
         
         gSizer6.Add( self.ButtonAutoY, 0, wx.ALL, 5 )
         gSizer6.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
-        gSizer6.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
-        gSizer6.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
+        gSizer6.Add(self.show_txt,0,wx.ALL|wx.ALIGN_CENTER|wx.ALIGN_RIGHT,5)
+        gSizer6.Add(self.show_box,0,wx.ALL|wx.ALIGN_CENTER|wx.ALIGN_LEFT,5)
            
         gSizer6.Add( self.Upload, 0, wx.ALL|wx.ALIGN_RIGHT, 5 )
         gSizer6.Add( self.Download, 0, wx.ALL|wx.ALIGN_LEFT, 5 )
@@ -142,10 +155,14 @@ class PanelSpec(wx.Panel):
         
         bSizer5 = wx.BoxSizer( wx.HORIZONTAL )
         
-        gSizer8 = wx.GridSizer( 2, 1, 0, 0 )
+        gSizer8 = wx.GridSizer( 3, 1, 0, 0 )
         
 
         gSizer8.Add( self.Max_Y, 0, wx.ALL, 5 )
+
+        text1=wx.StaticText(self, -1, 'dBm')
+        text1.SetFont(font)
+        gSizer8.Add(text1,0,wx.ALIGN_CENTER,5)
         
         gSizer8.Add( self.Min_Y, 0, wx.ALIGN_BOTTOM|wx.ALL, 5 )
         
@@ -163,11 +180,19 @@ class PanelSpec(wx.Panel):
         
         bSizer4.Add( bSizer5, 4, wx.EXPAND, 5 )
         
-        gSizer9 = wx.GridSizer( 1, 2, 0, 0 )
+        gSizer9 = wx.GridSizer( 1, 5, 0, 0 )
         
 #         gSizer9.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
 #         self.m_textCtrl16 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
         gSizer9.Add( self.Min_X, 0, wx.ALL, 5 )
+        
+        #gSizer9.AddSpacer((0,0),1,wx.EXPAND,5)
+        gSizer9.Add(self.rbw,0,wx.ALL,5)
+        gSizer9.Add(self.vbw,0,wx.ALL,5)
+
+        text2 = wx.StaticText(self, -1, 'MHz')
+        text2.SetFont(font)
+        gSizer9.Add(text2, 0, wx.ALIGN_CENTER, 5)
         
 #         self.m_textCtrl17 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
         gSizer9.Add( self.Max_X, 0, wx.ALIGN_RIGHT|wx.ALL, 5 )
@@ -199,7 +224,7 @@ class PanelSpec(wx.Panel):
         
         
         self.popupmenu=wx.Menu()
-        StringList=["Add Marker","Remove Marker", "All Marker Off"]
+        StringList=["Add Marker","Remove Marker", "All Markers Off"]
         for text in StringList:
             item=self.popupmenu.Append(-1,text)
             self.FigureCanvas.Bind(wx.EVT_CONTEXT_MENU,self.OnShowPopup)
@@ -263,7 +288,7 @@ class PanelSpec(wx.Panel):
             
 
     def OnAutoX(self,event):
-        self.setSpLabel(begin_X=self.parent.FreqMin,end_X=self.parent.FreqMax , \
+        self.setSpLabel(begin_X=self.parent.FreqMin,end_X=self.parent.FreqMax ,
             begin_Y=self.FFT_Min_Y,end_Y=self.FFT_Max_Y)
         self.FigureCanvas.draw()
         self.FFT_Min_X=self.parent.FreqMin
@@ -311,7 +336,7 @@ class PanelSpec(wx.Panel):
             self.OnAddMarker()  
         elif(text=="Remove Marker"):
             self.OnRemove()
-        elif(text=="All Marker Off"):
+        elif(text=="All Markers Off"):
             self.OnAllRemove()
     
     def DrawMarker(self,Max_X,Max_Y):
@@ -373,11 +398,11 @@ class PanelSpec(wx.Panel):
 
 
     def setSpLabel(self, begin_X=70, end_X=5995,begin_Y=-120,end_Y=20):
-        self.ylabel('dBm')
-        self.xlabel('MHz')
+        # self.ylabel('dBuV/m')
+        # self.xlabel('MHz')
         self.ylim(begin_Y,end_Y)
         self.xlim(begin_X,end_X)
-        yticks=linspace(begin_Y,end_Y,11)  ##11个数总共###
+        yticks=linspace(begin_Y,end_Y,15)  ##11个数总共###
         yticklabels = [str(int(i)) for i in yticks]  
         xticks=linspace(begin_X,end_X,11)
 
@@ -424,7 +449,6 @@ class PanelSpec(wx.Panel):
 
     def xlim(self,x_min,x_max):  
         self.axes.set_xlim(x_min,x_max)  
-  
   
     def ylim(self,y_min,y_max):  
         self.axes.set_ylim(y_min,y_max)

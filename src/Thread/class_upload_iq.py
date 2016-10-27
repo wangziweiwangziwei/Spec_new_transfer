@@ -11,6 +11,7 @@ from src.CommonUse.staticVar import staticVar
 class SendIQFile():
     def __init__(self,mainframe):
        self.queueIQUpload=mainframe.queueIQUpload
+       self.mainframe=mainframe
 
 
     def upload_iq(self):

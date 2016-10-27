@@ -10,6 +10,9 @@ import usb
 import os
 from src.Wave.IQWave import WaveIQ
 from src.CommonUse.staticVar import staticVar
+import math
+import cPickle as pickle
+
 from numpy import  cos,sin,pi
 class ReceiveTdoaThread(threading.Thread):
     def __init__(self,mainframe):
@@ -20,57 +23,45 @@ class ReceiveTdoaThread(threading.Thread):
         ###########################
         self.byte_to_package=mainframe.byte_to_package
         self.mainframe=mainframe
-        self.queueTdoa=mainframe.queueTdoa
+      
 
 
 
-        self.SweepRangeTdoa=[]
+        # self.SweepRangeTdoa=[]
         self.Fs=5e6
         ##########################
-        if(not os.path.exists("./LocalData//Tdoa//")):
-            os.makedirs('./LocalData//Tdoa//')
-
-
+        self.draw_intv=0
     def stop(self):
         self.event.clear()
 
     def run(self):
-        count=0
-        while(count<100):
+       
+        while(1):
             try:
+                self.event.wait()
+              
                 recvIQ=self.byte_to_package.ReceiveTdoa()
                 if(not recvIQ==0):
-                    self.SweepRangeTdoa.append(recvIQ)
-                while(1):
-                    self.event.wait()
-                    try:
-                        recvIQ = self.byte_to_package.ReceiveTdoa()
-                        if(not recvIQ==0):
-                            self.SweepRangeTdoa.append(recvIQ)
-                            if(recvIQ.CurBlockNo==recvIQ.Param.UploadNum):
-                                if(len(self.SweepRangeTdoa)==recvIQ.CurBlockNo):
-                                    if(self.queueTdoa._qsize()<16):
-                                        self.queueTdoa.put(self.SweepRangeTdoa)
-                                        self.SaveIQ()
-                                        if(not self.mainframe.WaveFrame==None):
-                                            self.DrawIQ(recvIQ)
-
-                                self.SweepRangeTdoa=[]
-
-                    except usb.core.USBError, e:
-                        print e
+                    # self.queueTdoa.put(recvIQ)
+                    self.SaveIQ(recvIQ)
+                #    self.DrawIQ(recvIQ) #会卡，所以还是关了
+           
 
             except usb.core.USBError,e:
-                print e
-                time.sleep(3)
-                count+=1
+                print "  TDOA NO DATA"
+                time.sleep(1)
+                 
 
     def DrawIQ(self,recvIQ):
+        self.draw_intv+=1
+        
+        
         if (self.mainframe.WaveFrame == None):  # 有IQ数据来时自动弹出WaveFrame
-            self.mainframe.WaveFrame = WaveIQ(self.mainframe, u"定频波形图                ")
+            self.mainframe.WaveFrame = WaveIQ(self.mainframe, u"TDOA波形图                ")
             self.mainframe.WaveFrame.Activate()
 
-        try:
+        if(self.draw_intv==5):
+            self.draw_intv=0
             #chData=[]
             IDataSet=[]
             QDataSet=[]
@@ -108,31 +99,33 @@ class ReceiveTdoaThread(threading.Thread):
                 IDataSet.append(IData)
                 QDataSet.append(QData)
 
-            data = []
-            for i in range(len(IDataSet)):
-                dataTmp = 2 * pi * Fc / self.Fs * i
-                data.append(IDataSet[i]*cos(dataTmp)+QDataSet[i]*sin(dataTmp))
+            max_I = [abs(i) for i in IDataSet]
+            max_Q = [abs(i) for i in QDataSet]
+            max_value = math.sqrt(max(max_I) ** 2 + max(max_Q) ** 2)
+            Idata = [float(i) / max_value for i in IDataSet]
+            Qdata = [float(i) / max_value for i in QDataSet]
+            try:
+                if(len(IDataSet)==2000):
+                    self.mainframe.WaveFrame.Wave(Idata,'y')
+                    self.mainframe.WaveFrame.Wave(Qdata,'r')
+            except Exception ,e:
+                self.mainframe.WaveFrame=None
+                print e
 
-            self.mainframe.WaveFrame.Wave(self.Fs,data)
-        except:
-            self.mainframe.WaveFrame=None
-            pass
+    def SaveIQ(self,recvIQ):
 
-    def SaveIQ(self):
-        self.IQList=[]
-        recvIQList = self.SweepRangeTdoa
-        for recvIQ in recvIQList:
-            block = IQBlock(recvIQ.CurBlockNo, recvIQ.IQDataAmp)
-            self.IQList.append(block)
+
+        block = IQBlock(recvIQ.CurBlockNo, recvIQ.IQDataAmp)
+
 
         head = IQUploadHeader(0x00, recvIQ.LonLatAlti, recvIQ.Param)
 
         #####组合tdoa 文件################
 
-        count = (recvIQList[0].SecondCount[0] << 24) + \
-                (recvIQList[0].SecondCount[1] << 16) + \
-                (recvIQList[0].SecondCount[2] << 8) + \
-                (recvIQList[0].SecondCount[3])
+        count = (recvIQ.SecondCount[0] << 24) + \
+                (recvIQ.SecondCount[1] << 16) + \
+                (recvIQ.SecondCount[2] << 8) + \
+                (recvIQ.SecondCount[3])
 
 
         Time=recvIQ.Time
@@ -153,25 +146,34 @@ class ReceiveTdoaThread(threading.Thread):
             Hour = int(curTime[8:10])
             Minute = int(curTime[10:12])
             Second = int(curTime[12:14])
-            
 
-        fileName = str(Year) + "-" + str(Month) + "-" + str(Day) + \
-                   "-" + str(Hour) + "-" + str(Minute) +  \
-                   "-" + str(Second) + '-' +str(count)+'-'+ str(ID) +  '-'+\
+
+        list1=[str(Month),str(Day),str(Hour),str(Minute),str(Second)]
+        for i in range(5):
+            if(len(list1[i])==1):
+                list1[i]='0'+list1[i]
+
+
+
+        fileName = str(Year) + "-" + list1[0] + "-" + list1[1] + \
+                   "-" + list1[2] + "-" + list1[3] +  \
+                   "-" + list1[4] + '-' +str(count)+'-'+ str(ID) + \
                    '.tdoa'
 
-        print fileName
+        #print fileName
 
         ###########SaveToLocal####################
-        fid=open(".\LocalData\\Tdoa\\"+ fileName,'wb+')
+        fid=open(".\LocalData\\Tdoa\\"+ fileName,'wb')
         # fid = open(self.dir_iq + fileName, 'wb+')
-        fid.write(bytearray(head))
-        for block in self.IQList:
-            fid.write(bytearray(block))
-        fid.write(struct.pack("!B", 0x00))
+        # fid.write(bytearray(head))
+        #
+        # fid.write(bytearray(block))
+        # fid.write(struct.pack("!B", 0x00))
+        d=dict(head=head,block=block)
+        pickle.dump(d, fid)
         fid.close()
         #########################################
-        del self.IQList
+
 
 
 

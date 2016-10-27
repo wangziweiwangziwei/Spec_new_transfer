@@ -9,11 +9,13 @@ from src.HistoryDisplayDialog import display_spec,display_IQ
 
 class SignalAnalysisDlg(wx.Dialog):
     
-    def __init__(self):
+    def __init__(self,parent):
         
-        wx.Dialog.__init__(self,None,-1,u"信号分析",wx.DefaultPosition,wx.DefaultSize)
+        wx.Dialog.__init__(self,parent,-1,u"信号分析",wx.DefaultPosition,wx.DefaultSize)
 
         ###################
+        self.parent=parent
+
         self.choice_local=0
 
         self.dlg_iq_local=0
@@ -84,12 +86,12 @@ class SignalAnalysisDlg(wx.Dialog):
         if(self.choice_local):
             if ( self.localData.GetSelection()==0 ):
                 if(self.dlg_spec_local==0):
-                    self.dlg_spec_local = powersptrLoc.PowerSptrLocDialog()
+                    self.dlg_spec_local = powersptrLoc.PowerSptrLocDialog(self)
                 self.dlg_spec_local.ShowModal()
             
             else:
                 if(self.dlg_iq_local==0):
-                    self.dlg_iq_local = iqLoc.IQLocDialog()
+                    self.dlg_iq_local = iqLoc.IQLocDialog(self)
                 self.dlg_iq_local.ShowModal()
 
         else:            
@@ -100,9 +102,9 @@ class SignalAnalysisDlg(wx.Dialog):
                 self.dlg_spec_ser.ShowModal()
                 if(self.dlg_spec_ser.isValid):
                     dlg = powersptrSer.PowerSptrSerDialog()
-                    result=dlg.ShowModal()
-                    if ( result == wx.ID_OK):
-                        dlg.Destroy()
+                    dlg.ShowModal()
+
+
                 
             else:
                 if(self.dlg_iq_ser==0):
@@ -112,9 +114,9 @@ class SignalAnalysisDlg(wx.Dialog):
 
                 if (self.dlg_iq_ser.isValid):
                     dlg = iqSer.IQSerDialog()
-                    result=dlg.ShowModal()
-                    if (result == wx.ID_OK):
-                        dlg.Destroy()
+                    dlg.ShowModal()
+
+
             
         
             

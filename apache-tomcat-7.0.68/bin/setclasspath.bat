@@ -21,7 +21,7 @@ rem endorsed directory.
 rem ---------------------------------------------------------------------------
 
 
-set JRE_HOME=G:\eclipse workspace\FrameTest\jre
+set JRE_HOME=C:\SRF_501_8_5\jre
 
 
 rem Make sure prerequisite environment variables are set

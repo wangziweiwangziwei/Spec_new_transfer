@@ -22,7 +22,7 @@ class ServerCommunication():
     def ConnectToServerFile(self,ip,port):
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-        sock.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 10240)
+        sock.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 1024*20)
         sock.connect((ip, port))
 
         self.sockFile=sock

@@ -9,7 +9,7 @@ from src.CommonUse.staticVar import staticVar
 from src.CommonUse.staticFileUpMode import staticFileUp
 import socket
 
-
+from src.Package.logg import Log
 class SendFileClass():
     def __init__(self,SpecFrame,
                  queueFFTUpload,queueAbUpload):
@@ -35,7 +35,7 @@ class SendFileClass():
         self.extract_num=0
 
         self.startTrans=0
-        self.sockFile=staticVar.getSockFile()
+     #   self.sockFile=
 
     def SendSpec(self):
         ### 每次都要获取 ，会变的 ####
@@ -53,7 +53,7 @@ class SendFileClass():
             ListAb = self.queueAbUpload.get_nowait()
 
             if(self.fileUploadMode==0 ):
-
+                Log.getLogger().debug("----shou dong chuan shu ")
                 self.FFTParse(ListSpec, ListAb)
 
             elif(self.fileUploadMode==2 ): ##抽取自动
@@ -61,6 +61,7 @@ class SendFileClass():
                 if(self.extract_num>=staticFileUp.getExtractM()): #如果改小了extract_m 可能永远无法传了。所以改成>=
                     # print 'start to transfer----------------'
                     self.extract_num=0
+                    Log.getLogger().debug("----extract chuan shu ")
                     self.FFTParse(ListSpec,ListAb)
 
             elif(self.fileUploadMode==1 ):  ##功率谱是否变化
@@ -72,6 +73,7 @@ class SendFileClass():
                         break
                 if(flag==1):
                     # print 'start to auto >>>>>>>>>>>>>>>  '
+                    Log.getLogger().debug("---- auto chuan shu ")
                     self.FFTParse(ListSpec,ListAb)
 
 #         wx.MessageBox(u'传功率谱文件完毕',
@@ -138,36 +140,43 @@ class SendFileClass():
         fileNameLen=len(fileName)
         fileContentLen=sizeof(head)+(sizeof(blockFFT)+sizeof(blockAb))*TotalNum+2
 
-        print fileName
+
         # print fileNameLen
         # print fileContentLen
 
         ############SendToServer###################
-        if(self.sockFile):
+        if(not staticVar.getSockFile()==0):
             try:
+                sockFile=staticVar.getSockFile()
                 str1=struct.pack("!2BHQ",0x00,0xFF,fileNameLen,fileContentLen)
-                self.sockFile.sendall(str1+fileName)
+                sockFile.sendall(str1+fileName)
+                sockFile.sendall(bytearray(head))
+                for i in xrange(len(self.SpecList)/2):
+                    sockFile.sendall(bytearray(self.SpecList[2*i]))
+                sockFile.sendall(struct.pack("!B",0xFF))
+                for i in xrange(len(self.SpecList)/2):
+                    sockFile.sendall(bytearray(self.SpecList[2*i+1]))
+                sockFile.sendall(struct.pack("!B",0x00))
+                ### 发送成功以后打个文件名 ###########
 
-                self.sockFile.sendall(bytearray(head))
-                for i in xrange(len(self.SpecList)/2):
-                    self.sockFile.sendall(bytearray(self.SpecList[2*i]))
-                self.sockFile.sendall(struct.pack("!B",0xFF))
-                for i in xrange(len(self.SpecList)/2):
-                    self.sockFile.sendall(bytearray(self.SpecList[2*i+1]))
-                self.sockFile.sendall(struct.pack("!B",0x00))
+                print fileName
+                self.count += 1
+                self.countFFT += 1
+                print 'self.countFFT', self.countFFT
+                Log.getLogger().debug("send_spec_file_ok--name: %s--num:%s" % (fileName,self.countFFT))
             except socket.error,e:
-                print 'socket_error',e
+                print 'socket_error_send_spec  ',e
+                Log.getLogger().debug(" socket_error_found_in_send_spec_file: %s"%e)
+                Log.getLogger().debug(" Cur socket sockFile=: %s" % staticVar.sockFile)
                 staticVar.sockFile=0
-                self.sockFile=0
+
 
 
 
         #########################################
         self.SpecList=[]
 
-        self.count+=1
-        self.countFFT+=1
-        print 'self.countFFT',self.countFFT
+
 
 
 

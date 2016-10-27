@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import threading
+
 import wx
 from src.Package.package import *
 
@@ -14,10 +15,11 @@ from src.Spectrum import Spectrum_1
 from src.CommonUse.staticFileUpMode import staticFileUp
 from src.CommonUse.press_hand import press_hand
 from src.CommonUse.staticVar import staticVar
-
+import cPickle as pickle
 
 ###########接受硬件上传FFT数据和异常频点并放入队列############ 
   
+from src.Package.logg import Log
 
 class ReceiveFFTThread(threading.Thread):
     def __init__(self,mainframe):
@@ -50,9 +52,23 @@ class ReceiveFFTThread(threading.Thread):
         self.queueAbLocalSave=self.mainframe.queueAbLocalSave
 
         ###############POA 应急 ########################
-        self.queuePoa=self.mainframe.queuePoa
+        
         self.count_for_abNum=0
         self.contain_poa=[]
+        
+        #########最大保持时保存前一次功率谱值#################
+        self.yData_before = []
+        for i in range(1024):
+            self.yData_before.append(0)
+        self.yData_before_ave = []
+        for i in range(1024):
+            self.yData_before_ave.append(0)
+        self.cont_sty_max = 1
+        self.cont_sty_ave = 0
+        self.show_fft = 1
+        self.show_ave = 1
+        self.change_sweep = 0
+
         
     def stop(self):
         self.event.clear()
@@ -100,6 +116,12 @@ class ReceiveFFTThread(threading.Thread):
                     funcPara=recvFFT.CommonHeader.FunctionPara
                     self.SweepTotalNum=recvFFT.SweepSectionTotalNum
 
+                    if (not self.change_sweep==self.SweepTotalNum):
+                        self.cont_sty_ave = 0
+                        self.cont_sty_max = 1
+                        
+                    
+
                     if(funcPara==0x51 or funcPara==0x56):
                         self.SweepRange.append(recvFFT)
                         
@@ -121,12 +143,15 @@ class ReceiveFFTThread(threading.Thread):
                                 ##仅仅是在点了上传或者下载后加入队列，不做其他操作########
                                 self.FileToQueue()
                                 if( isinstance(self.mainframe.SpecFrame,Spectrum_1.Spec )):
-                                    self.DrawAndShowAb(funcPara)         
+                                    self.DrawAndShowAb(funcPara)
+                                    
+                                           
                             self.SweepRange=[]
                             self.SweepRangeAb=[]
                         
                         else:
-                            
+
+
                             if(len(self.SweepRangeBack)==self.SweepTotalNum):
                                 if( isinstance(self.mainframe.SpecFrame,Spectrum_1.Spec )):
                                     self.DrawBack(funcPara)
@@ -142,8 +167,11 @@ class ReceiveFFTThread(threading.Thread):
                     if(recvFFT.CurSectionNo == recvFFT.SweepTotalNum):
                         if(len(self.contain_poa)==recvFFT.SweepTotalNum):
                             if(self.count_for_abNum):
-                                if(self.queuePoa._qsize()<16):
-                                    self.queuePoa.put(self.contain_poa)
+                                # if(self.queuePoa._qsize()<16):
+                                #     self.queuePoa.put(self.contain_poa)
+                                self.savePoa()
+
+
                         self.count_for_abNum=0
                         self.contain_poa=[]
 
@@ -153,14 +181,111 @@ class ReceiveFFTThread(threading.Thread):
             except usb.core.USBError:
                 print 'time out1'
             
-            
-                     
+    def savePoa(self):
+
+
+        list_for_ab = []
+
+        count_ab = 0
+
+        for recvPoa in self.contain_poa:
+            for i in range(recvPoa.AbNum):
+                list_for_ab.extend(bytearray(recvPoa.AbBlock[i]))
+            count_ab += recvPoa.AbNum
+
+        ###组合POA 文件 时间 ####
+
+        Time = self.contain_poa[0].Time
+        CommonHeader = self.contain_poa[0].CommonHeader
+        ID = (CommonHeader.HighDeviceID << 8) + CommonHeader.LowDeviceID
+        Year = (Time.HighYear << 4) + Time.LowYear
+        Month = Time.Month
+        Day = Time.Day
+        Hour = (Time.HighHour << 2) + Time.LowHour + 8
+        Minute = Time.Minute
+        Second = Time.Second
+
+        if (not Year == 2016):
+            curTime = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
+            Year = int(curTime[0:4])
+            Month = int(curTime[4:6])
+            Day = int(curTime[6:8])
+            Hour = int(curTime[8:10])
+            Minute = int(curTime[10:12])
+            Second = int(curTime[12:14])
+
+        ID = staticVar.getid()
+
+        count = (self.contain_poa[0].SecondCount[0] << 24) + \
+                (self.contain_poa[0].SecondCount[1] << 16) + \
+                (self.contain_poa[0].SecondCount[2] << 8) + \
+                (self.contain_poa[0].SecondCount[3])
+
+        list1 = [str(Month), str(Day), str(Hour), str(Minute), str(Second)]
+        for i in range(5):
+            if (len(list1[i]) == 1):
+                list1[i] = '0' + list1[i]
+
+        fileName = str(Year) + "-" + list1[0] + "-" + list1[1] + \
+                   "-" + list1[2] + "-" + list1[3] + \
+                   "-" + list1[4] + '-' + str(count) + '-' + str(ID) + \
+                   '.poa'
+
+
+
+        ##### 经纬度 ############
+        LonLat = self.contain_poa[0].LonLatAlti
+
+        fid = open(".\LocalData\\Poa\\" + fileName, 'wb')
+        d = dict(LonLat=LonLat, count_ab=count_ab,list_for_ab=list_for_ab)
+        pickle.dump(d, fid)
+        fid.close()
+
     def DrawAndShowAb(self,funcPara):
         self.SweepCount+=1
         if(self.SweepCount>=self.DrawIntv):
             self.SweepCount=0
             yData=self.ExtractPoint(self.SweepRange)
-            self.DrawSpec(funcPara,yData)
+            # yData = self.change_unit(self.xx, yData_before)
+            
+            if self.show_fft == 1:
+                self.DrawSpec(funcPara,yData)
+                
+            
+            show_select = self.mainframe.SpecFrame.panelFigure.show_box.GetSelection()
+
+            if show_select == 0 :
+                self.DrawSpec(funcPara,yData)   
+
+            elif show_select == 1 :
+                self.change_sweep = self.SweepTotalNum
+                if self.cont_sty_max :
+                    self.yData_before = yData
+                    self.cont_sty_max = 0
+                yData_sty_max = self.FindMax(yData)
+                self.yData_before = yData_sty_max
+                self.DrawSpec(funcPara, yData_sty_max)
+                self.show_fft = 0
+            
+            elif show_select == 2 :
+                yData_sty_min = self.FindMin(yData)
+                self.yData_before = yData_sty_min
+                self.DrawSpec(funcPara, yData_sty_min)
+                self.show_fft = 0
+                      
+            elif show_select == 3 :
+                self.change_sweep = self.SweepTotalNum
+                if self.show_ave :
+                    self.yData_before_ave = yData
+                    self.show_ave = 0  
+                yData_sty_ave = self.FindAve(yData)
+                self.cont_sty_ave += 1
+                #print self.cont_sty_ave
+                self.yData_before_ave = yData_sty_ave
+                self.DrawSpec(funcPara, yData_sty_ave)
+                self.show_fft = 0
+                
+            self.ShowToji(yData)
             self.DrawWater(yData)
             # for recvAb in self.SweepRangeAb:
             #     if(not recvAb.AbFreqNum==0):
@@ -169,21 +294,49 @@ class ReceiveFFTThread(threading.Thread):
             if(press_hand.press_hand==1):
                 staticVar.outPoint.write(press_hand.press_set)
                 staticVar.outPoint.write(press_hand.press_freq)
-
-        
+    
+    def FindMax(self,yData): 
+        yData_sty_max = []
+        for i in range(1024):
+            if self.yData_before[i] > yData[i]:
+                yData_sty_max.append(self.yData_before[i])
+            else :
+                yData_sty_max.append(yData[i])
+        return yData_sty_max
+                
+            
+    def FindMin(self,yData):
+        yData_sty_min = []
+        for i in range(1024):
+            if self.yData_before[i] < yData[i]:
+                yData_sty_min.append(self.yData_before[i])
+            else :
+                yData_sty_min.append(yData[i])
+        return yData_sty_min
+    
+    
+    def FindAve(self,yData):
+        yData_sty_ave = [] 
+        for i in range(1024):
+            yData_sty_ave.append((yData[i] + self.yData_before_ave[i] * self.cont_sty_ave)/(self.cont_sty_ave + 1))   
+        return yData_sty_ave
         
     def DrawBack(self,funcPara):
         self.SweepBackCount+=1
         if(self.SweepBackCount>=self.DrawBackIntv):
             self.SweepBackCount=0
-            
-            yData=self.ExtractPoint(self.SweepRangeBack)
+            yData =self.ExtractPoint(self.SweepRangeBack)
+            # yData = self.change_unit(self.xx, yData_before)
             self.DrawSpec(funcPara,yData)
 
     def FileToQueue(self):
+        if(not len(self.SweepRange)==len(self.SweepRangeAb)):
+            return
+
         if( isinstance(self.mainframe.SpecFrame,Spectrum_1.Spec )):
           
             if(self.queueFFTUpload._qsize()<16 ):
+               
                 if((self.mainframe.SpecFrame.panelFigure.getstartUploadOnce()) and (staticFileUp.getUploadMode()==0)):
 
                     self.queueFFTUpload.put_nowait(self.SweepRange)
@@ -196,11 +349,12 @@ class ReceiveFFTThread(threading.Thread):
                     self.queueFFTUpload.put_nowait(self.SweepRange)
                     self.queueAbUpload.put_nowait(self.SweepRangeAb)
 
-                    
+                
                 else:
                     pass 
 
-       
+                Log.getLogger().debug("Cur queueFFTUpload: %s, AbUpload: %s"%(self.queueFFTUpload._qsize(),self.queueAbUpload._qsize()) )
+
                     
             if(self.queueFFTLocalSave.qsize()<=10):
                 if(self.mainframe.SpecFrame.panelFigure.getisDownLoad()):
@@ -239,9 +393,9 @@ class ReceiveFFTThread(threading.Thread):
 
 
         ###设置线条的xdata################
-        xx=linspace(begin , end,1024)
-        self.mainframe.SpecFrame.panelFigure.lineSpec.set_xdata(xx)
-        self.mainframe.SpecFrame.panelFigure.lineSpecBack.set_xdata(xx)            
+        self.xx = linspace(begin, end, 1024)
+        self.mainframe.SpecFrame.panelFigure.lineSpec.set_xdata(self.xx)
+        self.mainframe.SpecFrame.panelFigure.lineSpecBack.set_xdata(self.xx)
         
         ##设置显示范围（包括文本框和Label）####################
         self.mainframe.FreqMin=begin
@@ -253,6 +407,7 @@ class ReceiveFFTThread(threading.Thread):
 
                 
     def DrawSpec(self,funcPara,yData):
+        
         try:
             self.mainframe.SpecFrame.panelFigure.PowerSpectrum(funcPara,yData)
         except wx.PyDeadObjectError:
@@ -308,12 +463,21 @@ class ReceiveFFTThread(threading.Thread):
               #  print i
            # print0
            # print 
-                    
-                
-        yData=[]
-        ExtractM = len(allFreq)/1024
-        Section=1024
 
+        # index_s=0
+        # index_e=0
+
+        # if(self.mainframe.FreqMax<5995):
+        #     freq_s=self.mainframe.FreqMin
+        #     freq_e= self.mainframe.FreqMax
+        #     index_s = int((freq_s-(70+(freq_s-70)/25*25))/25.0*1024)
+        #     index_e = int((freq_e-(70+(freq_e-70)/25*25))/25.0*1024)
+
+        # allFreq=allFreq[index_s:len(allFreq)-index_e]
+
+        yData = []
+        ExtractM = len(allFreq) / 1024
+        Section = 1024
 
         for i in xrange(Section):
             Sum=0
@@ -386,4 +550,17 @@ class ReceiveFFTThread(threading.Thread):
                         self.mainframe.SpecFrame.panelAbFreq.SetStringItem(i,1," ")
                         self.mainframe.SpecFrame.panelAbFreq.SetStringItem(i,2," ")
 
+    def change_unit(self,xData,yData):
+        yData_c = []
+        for i in range(1024):
+            yData_c.append(80 + 20 * math.log10(xData[i]) + yData[i])
+        return yData_c
 
+    def ShowToji(self,yData):
+        try:
+            if(not self.mainframe.TojiFrame==None):
+
+                self.mainframe.TojiFrame.Tongji(self.xx,yData)
+        except wx.PyDeadObjectError:
+            self.mainframe.WaterFrame=None
+            pass

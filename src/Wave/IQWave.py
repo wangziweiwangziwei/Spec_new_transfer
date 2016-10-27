@@ -70,6 +70,9 @@ class WaveIQ(wx.aui.AuiMDIChildFrame):
         ydata=[]
         
         self.LineWave,=self.axes.plot(xdata,ydata,'r')
+
+        self.LineWave.set_xdata([i for i in xrange(2000)])
+
     
     def OnCloseWindow(self, event):
         ###先停止或者取消画图线程#####
@@ -89,7 +92,7 @@ class WaveIQ(wx.aui.AuiMDIChildFrame):
 #             self.dir=dlg.m_dirPick.GetPath()
 #             print self.dir      
        
-    def setWaveLabel(self,begin_X=0,end_X=100,begin_Y=-100,end_Y=100):   
+    def setWaveLabel(self,begin_X=0,end_X=100,begin_Y=-1 ,end_Y=1 ):
     
         yLabelNum=8
         self.axes.set_xlim(begin_X,end_X)
@@ -111,9 +114,8 @@ class WaveIQ(wx.aui.AuiMDIChildFrame):
         self.axes.grid(True)
 
 
-    def Wave(self,fs,chData):
-        
-        self.LineWave.set_xdata([i for i in xrange(2000)])
+    def Wave(self, chData,color):
+        self.LineWave.set_color(color)
         self.LineWave.set_ydata(chData)
         self.FigureCanvas.draw()    
 

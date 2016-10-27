@@ -1,5 +1,5 @@
 class staticFileUp:
-    upload_mode=2  #0:shou dong #
+    upload_mode=0  #0:shou dong #
     extract_m=1
     change_thres=10
     

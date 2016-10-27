@@ -11,6 +11,8 @@ import os
 from src.Wave.IQWave import WaveIQ
 from src.CommonUse.staticVar import staticVar
 from numpy import  cos,sin,pi
+import  math
+
 class ReceiveIQThread(threading.Thread):
     def __init__(self,mainframe):
         threading.Thread.__init__(self)
@@ -63,9 +65,10 @@ class ReceiveIQThread(threading.Thread):
         for i in range(5):
             for recvIQ in self.SweepRangeIQ:
                 if(isinstance(self.mainframe.WaveFrame,WaveIQ)):
-                    data=self.ParseIQ(recvIQ)
+                    Idata,Qdata=self.ParseIQ(recvIQ)
                     try:
-                        self.mainframe.WaveFrame.Wave(self.Fs,data)
+                        self.mainframe.WaveFrame.Wave(Idata,'y')
+                        self.mainframe.WaveFrame.Wave(Qdata, 'r')
                     except Exception,e:
                         self.mainframe.WaveFrame.Destroy()
                         self.mainframe.WaveFrame=None
@@ -124,12 +127,16 @@ class ReceiveIQThread(threading.Thread):
             IDataSet.append(IData)
             QDataSet.append(QData)
 
-        data = []
-        for i in range(len(IDataSet)):
-            dataTmp = 2 * pi * Fc / self.Fs * i
-            data.append(IDataSet[i]*cos(dataTmp)+QDataSet[i]*sin(dataTmp))
 
-        return data
+        max_I=[abs(i) for i in IDataSet]
+        max_Q= [abs(i) for i in QDataSet]
+        max_value = math.sqrt(max(max_I)**2+ max(max_Q)**2)
+        Idata=[float(i)/max_value for i in IDataSet]
+        Qdata=[float(i)/max_value for i in QDataSet]
+
+
+
+        return Idata,Qdata
     
         
 

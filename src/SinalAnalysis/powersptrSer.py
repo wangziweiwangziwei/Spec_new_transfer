@@ -18,18 +18,18 @@ class PowerSptrSerDialog(wx.Dialog):
         waterfallDispl = wx.CheckBox(panel,-1,u"   瀑布图")
         listtableDispl = wx.CheckBox(panel,-1,u"   列表显示")
         statisticDispl = wx.CheckBox(panel,-1,u"   统计显示")
-        displBtn = wx.Button(panel,wx.ID_OK,u"显示")
+        displBtn = wx.Button(panel,-1,u"显示")
         
-        img_spectrum = wx.Image('..//icons//spectrum.png',wx.BITMAP_TYPE_ANY)
+        img_spectrum = wx.Image('.//icons//spectrum.png',wx.BITMAP_TYPE_ANY)
         bmp_spectrum = wx.StaticBitmap(panel,-1,wx.BitmapFromImage(img_spectrum))
 
-        img_waterfall = wx.Image('..//icons//waterfull.png',wx.BITMAP_TYPE_ANY)
+        img_waterfall = wx.Image('.//icons//waterfull.png',wx.BITMAP_TYPE_ANY)
         bmp_waterfall = wx.StaticBitmap(panel,-1,wx.BitmapFromImage(img_waterfall))
         
-        img_list = wx.Image('..//icons//list.png',wx.BITMAP_TYPE_ANY)
+        img_list = wx.Image('.//icons//list.png',wx.BITMAP_TYPE_ANY)
         bmp_list = wx.StaticBitmap(panel,-1,wx.BitmapFromImage(img_list))
         
-        img_stat = wx.Image('..//icons//eye.png',wx.BITMAP_TYPE_ANY)
+        img_stat = wx.Image('.//icons//statistics.png',wx.BITMAP_TYPE_ANY)
         bmp_stat = wx.StaticBitmap(panel,-1,wx.BitmapFromImage(img_stat))
         
         # pSizer = wx.BoxSizer(wx.VERTICAL)
@@ -61,7 +61,7 @@ class PowerSptrSerDialog(wx.Dialog):
 
         self.Bind(wx.EVT_BUTTON,self.OnButtonClick,displBtn)
     def OnButtonClick(self,event):
-        self.Close()
+        pass
 
         # btnSizer = wx.BoxSizer(wx.VERTICAL)
         # btnSizer.Add(displBtn,0,wx.ALL,5)

@@ -21,22 +21,22 @@ class IQSerDialog(wx.Dialog):
         conDispl = wx.CheckBox(panel,-1,u"   星座图")
         displBtn = wx.Button(panel,-1,u"显示")
         
-        img_waveform = wx.Image('../icons//waveform.png',wx.BITMAP_TYPE_ANY)
+        img_waveform = wx.Image('./icons//waveform.png',wx.BITMAP_TYPE_ANY)
         bmp_waveform = wx.StaticBitmap(panel,-1,wx.BitmapFromImage(img_waveform))
         
-        img_spectrum = wx.Image('../icons//spectrum.png',wx.BITMAP_TYPE_ANY)
+        img_spectrum = wx.Image('./icons//spectrum.png',wx.BITMAP_TYPE_ANY)
         bmp_spectrum = wx.StaticBitmap(panel,-1,wx.BitmapFromImage(img_spectrum))
         
-        img_waterfall = wx.Image('../icons//waterfull.png',wx.BITMAP_TYPE_ANY)
+        img_waterfall = wx.Image('./icons//waterfull.png',wx.BITMAP_TYPE_ANY)
         bmp_waterfall = wx.StaticBitmap(panel,-1,wx.BitmapFromImage(img_waterfall))
         
-        img_ccdf = wx.Image('../icons//ccdf.png',wx.BITMAP_TYPE_ANY)
+        img_ccdf = wx.Image('./icons//ccdf.png',wx.BITMAP_TYPE_ANY)
         bmp_ccdf = wx.StaticBitmap(panel,-1,wx.BitmapFromImage(img_ccdf))
         
-        img_eye = wx.Image('../icons//eye.png',wx.BITMAP_TYPE_ANY)
+        img_eye = wx.Image('./icons//eye.png',wx.BITMAP_TYPE_ANY)
         bmp_eye = wx.StaticBitmap(panel,-1,wx.BitmapFromImage(img_eye))
         
-        img_constellation = wx.Image('../icons//constellation.png',wx.BITMAP_TYPE_ANY)
+        img_constellation = wx.Image('./icons//constellation.png',wx.BITMAP_TYPE_ANY)
         bmp_constellation = wx.StaticBitmap(panel,-1,wx.BitmapFromImage(img_constellation))
         
         # pSizer = wx.BoxSizer(wx.VERTICAL)
